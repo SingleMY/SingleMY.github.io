@@ -16,7 +16,6 @@
 <meta property="og:url" content="https://singlemy.github.io/2020/04/28/%E5%9F%BA%E4%BA%8EHexo-GitHub%E6%90%AD%E5%BB%BAblog%E7%9A%84%E5%8E%86%E7%A8%8B/index.html">
 <meta property="og:site_name" content="墨阳">
 <meta property="og:description" content="从零开始基于Hexo+GitHub搭建blog本文只针对Windows平台  序言　　　　作为软件工程专业大三的学生，随着接触的专业知识越来越多，搭建博客是必要的，当然可以选择当下受欢迎的博客网站CSDN、博客园和简书等，我在这几个网站也都注册了账号，但在别人的网站总是有“约束”，不能体现一个软件开发者的追求，也不能满足我对知识的需求。但可以把自己的好文章多发布几个平台，增加阅读量。用框架搭建自">
-<meta property="og:image" content="https://singlemy.github.io/2020/04/28/%E5%9F%BA%E4%BA%8EHexo-GitHub%E6%90%AD%E5%BB%BAblog%E7%9A%84%E5%8E%86%E7%A8%8B/%E5%9F%BA%E4%BA%8EHexo-GitHub%E6%90%AD%E5%BB%BAblog%E7%9A%84%E5%8E%86%E7%A8%8B/Blog%E6%90%AD%E5%BB%BA.png">
 <meta property="og:image" content="https://singlemy.github.io/2020/04/28/%E5%9F%BA%E4%BA%8EHexo-GitHub%E6%90%AD%E5%BB%BAblog%E7%9A%84%E5%8E%86%E7%A8%8B/Blog%E6%90%AD%E5%BB%BA.png">
 <meta property="og:image" content="https://singlemy.github.io/2020/04/28/%E5%9F%BA%E4%BA%8EHexo-GitHub%E6%90%AD%E5%BB%BAblog%E7%9A%84%E5%8E%86%E7%A8%8B/%E5%9F%BA%E4%BA%8EHexo-GitHub%E6%90%AD%E5%BB%BAblog%E7%9A%84%E5%8E%86%E7%A8%8B/github-01.png">
 <meta property="og:image" content="https://singlemy.github.io/2020/04/28/%E5%9F%BA%E4%BA%8EHexo-GitHub%E6%90%AD%E5%BB%BAblog%E7%9A%84%E5%8E%86%E7%A8%8B/%E5%9F%BA%E4%BA%8EHexo-GitHub%E6%90%AD%E5%BB%BAblog%E7%9A%84%E5%8E%86%E7%A8%8B/github-02.png">
@@ -28,11 +27,11 @@
 <meta property="og:image" content="https://singlemy.github.io/2020/04/28/%E5%9F%BA%E4%BA%8EHexo-GitHub%E6%90%AD%E5%BB%BAblog%E7%9A%84%E5%8E%86%E7%A8%8B/%E5%9F%BA%E4%BA%8EHexo-GitHub%E6%90%AD%E5%BB%BAblog%E7%9A%84%E5%8E%86%E7%A8%8B/git-03.png">
 <meta property="og:image" content="https://singlemy.github.io/2020/04/28/%E5%9F%BA%E4%BA%8EHexo-GitHub%E6%90%AD%E5%BB%BAblog%E7%9A%84%E5%8E%86%E7%A8%8B/%E5%9F%BA%E4%BA%8EHexo-GitHub%E6%90%AD%E5%BB%BAblog%E7%9A%84%E5%8E%86%E7%A8%8B/git-04.png">
 <meta property="article:published_time" content="2020-04-28T13:41:33.000Z">
-<meta property="article:modified_time" content="2020-04-29T09:35:46.843Z">
+<meta property="article:modified_time" content="2020-04-29T10:37:13.177Z">
 <meta property="article:author" content="moyang">
 <meta property="article:tag" content="随笔">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://singlemy.github.io/2020/04/28/%E5%9F%BA%E4%BA%8EHexo-GitHub%E6%90%AD%E5%BB%BAblog%E7%9A%84%E5%8E%86%E7%A8%8B/%E5%9F%BA%E4%BA%8EHexo-GitHub%E6%90%AD%E5%BB%BAblog%E7%9A%84%E5%8E%86%E7%A8%8B/Blog%E6%90%AD%E5%BB%BA.png">
+<meta name="twitter:image" content="https://singlemy.github.io/2020/04/28/%E5%9F%BA%E4%BA%8EHexo-GitHub%E6%90%AD%E5%BB%BAblog%E7%9A%84%E5%8E%86%E7%A8%8B/Blog%E6%90%AD%E5%BB%BA.png">
   
     <link rel="alternative" href="/atom.xml" title="墨阳" type="application/atom+xml">
   
@@ -259,19 +258,18 @@
     <h1 id="从零开始基于Hexo-GitHub搭建blog"><a href="#从零开始基于Hexo-GitHub搭建blog" class="headerlink" title=" 从零开始基于Hexo+GitHub搭建blog"></a> 从零开始基于Hexo+GitHub搭建blog</h1><p align = "right">本文只针对Windows平台</p>
 
 <h2 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h2><p>　　<font face="楷体" color="">　　作为软件工程专业大三的学生，随着接触的专业知识越来越多，搭建博客是必要的，当然可以选择当下受欢迎的博客网站<a href="https://www.csdn.net/" target="_blank" rel="noopener" title="CSDN博客首页">CSDN</a>、<a href="https://www.cnblogs.com/" target="_blank" rel="noopener" title="cnblog首页">博客园</a>和<a href="https://www.jianshu.com/" target="_blank" rel="noopener" title="简书首页">简书</a>等，我在这几个网站也都注册了账号，但在别人的网站总是有“约束”，不能体现一个软件开发者的追求，也不能满足我对知识的需求。但可以把自己的好文章多发布几个平台，增加阅读量。用框架搭建自己的博客也很简单，当然也可以自己写网站（后续更新）。闲话不多说，上干货。</font></p>
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><em>首先，<a href="https://guides.github.com/activities/hello-world/" target="_blank" rel="noopener" title="What is Github?">Github</a>提供代码托管功能，<a href="https://pages.github.com/" target="_blank" rel="noopener" title="What is Github Pages?">GitHub Page</a>可以把GitHub仓库中某一分支的代码由HTTP访问到,这两部分提供良好的服务器；接下来，前端网页使用<a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="noopener" title="博客框架">Hexo</a>简洁的博客框架构建；最后一步，就是把在本地编辑好的博客页面部署在GitHub上。</em></p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>首先，<a href="https://guides.github.com/activities/hello-world/" target="_blank" rel="noopener" title="What is Github?">Github</a>提供代码托管功能，<a href="https://pages.github.com/" target="_blank" rel="noopener" title="What is Github Pages?">GitHub Page</a>可以把GitHub仓库中某一分支的代码由HTTP访问到,这两部分提供良好的服务器；接下来，前端网页使用<a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="noopener" title="博客框架">Hexo</a>简洁的博客框架构建；最后一步，就是把在本地编辑好的博客页面部署在GitHub上。</p>
 <ul>
-<li><strong>思维导图</strong><br><br><img src="./%E5%9F%BA%E4%BA%8EHexo-GitHub%E6%90%AD%E5%BB%BAblog%E7%9A%84%E5%8E%86%E7%A8%8B/Blog%E6%90%AD%E5%BB%BA.png" alt=""></li>
-</ul>
-<p>– <img src="/2020/04/28/%E5%9F%BA%E4%BA%8EHexo-GitHub%E6%90%AD%E5%BB%BAblog%E7%9A%84%E5%8E%86%E7%A8%8B/Blog%E6%90%AD%E5%BB%BA.png" class="" title="博客搭建流程图"> </p>
-<ul>
+<li><strong>思维导图</strong><br><img src="/2020/04/28/%E5%9F%BA%E4%BA%8EHexo-GitHub%E6%90%AD%E5%BB%BAblog%E7%9A%84%E5%8E%86%E7%A8%8B/Blog%E6%90%AD%E5%BB%BA.png" class="" title="博客搭建流程图"> </li>
 <li><strong>关于Hexo</strong><br><br>Hexo是博客<a href="https://www.zhihu.com/question/19558524" target="_blank" rel="noopener" title="什么是框架？">框架</a>，框架特点是<em>快速、简洁且高效</em>，Hexo 使用 <a href="https://www.runoob.com/markdown/md-tutorial.html" target="_blank" rel="noopener"菜鸟教程Markdown"">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。<br><br>Hexo基于<a href="https://nodejs.org/en/" target="_blank" rel="noopener" title="Node.js官网下载">Node.js</a>（简单说Node.js就是JavaScript的解析器）,并且我们通常使用hexo关于git管理组件：<a href="https://github.com/hexojs/hexo-deployer-git" target="_blank" rel="noopener" title="Git deployer plugin for Hexo">hexo-delopyer-git</a>发布博客文章,所以<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener" title="中文官网教程">安装Hexo</a>前一般先安装<strong>Node.js</strong>和<strong>Git</strong>环境。</li>
 </ul>
 <h2 id="搭建历程"><a href="#搭建历程" class="headerlink" title="搭建历程"></a>搭建历程</h2><ol>
 <li><h3>在GitHub上建仓库</h3></li>
 </ol>
 <ul>
-<li><p><strong>注册登录账号</strong>（有账号请略过）<br><br>访问<a href="https://github.com/" target="_blank" rel="noopener">github</a>官网首页，输入邮箱地址，点击Get started按钮，然后填写用户名、密码等信息提交即可。<br><img src="./%E5%9F%BA%E4%BA%8EHexo-GitHub%E6%90%AD%E5%BB%BAblog%E7%9A%84%E5%8E%86%E7%A8%8B/github-01.png" alt=""><br><img src="./%E5%9F%BA%E4%BA%8EHexo-GitHub%E6%90%AD%E5%BB%BAblog%E7%9A%84%E5%8E%86%E7%A8%8B/github-02.png" alt=""><br>点击<a href="https://github.com/login" target="_blank" rel="noopener">Sign in</a>按钮,输入用户名、密码登录即可。<br><img src="./%E5%9F%BA%E4%BA%8EHexo-GitHub%E6%90%AD%E5%BB%BAblog%E7%9A%84%E5%8E%86%E7%A8%8B/github-03.png" alt=""></p>
+<li><p><strong>注册登录账号</strong>（有账号请略过）<br><br>访问<a href="https://github.com/" target="_blank" rel="noopener">github</a>官网首页，输入邮箱地址，点击Get started按钮，然后填写用户名、密码等信息提交即可。</p>
+<img class="[blog] .&#x2F;基于Hexo-GitHub搭建blog的历程&#x2F;github-01.png [400] [300] &quot;title text&quot; &quot;alt text&quot;">
+<p><img src="./%E5%9F%BA%E4%BA%8EHexo-GitHub%E6%90%AD%E5%BB%BAblog%E7%9A%84%E5%8E%86%E7%A8%8B/github-01.png" alt=""><br><img src="./%E5%9F%BA%E4%BA%8EHexo-GitHub%E6%90%AD%E5%BB%BAblog%E7%9A%84%E5%8E%86%E7%A8%8B/github-02.png" alt=""><br>点击<a href="https://github.com/login" target="_blank" rel="noopener">Sign in</a>按钮,输入用户名、密码登录即可。<br><img src="./%E5%9F%BA%E4%BA%8EHexo-GitHub%E6%90%AD%E5%BB%BAblog%E7%9A%84%E5%8E%86%E7%A8%8B/github-03.png" alt=""></p>
 </li>
 <li><p><strong>创建仓库</strong><br><br><img src="./%E5%9F%BA%E4%BA%8EHexo-GitHub%E6%90%AD%E5%BB%BAblog%E7%9A%84%E5%8E%86%E7%A8%8B/github-04.png" alt=""><br>点击右上角的“+”，选择new repository，然后填写仓库的相关信息，仓库名定义为<em>你的用户名.github.io</em><br>并且不能让仓库为空，可以勾选初始化一个README.md文件。然后完成即可<br><img src="./%E5%9F%BA%E4%BA%8EHexo-GitHub%E6%90%AD%E5%BB%BAblog%E7%9A%84%E5%8E%86%E7%A8%8B/github-05.png" alt=""><br><font face=“黑体” size=3>注意: Github Pages的Repository名字是特定的，比如我Github账号是moyang0909，那么我Github Pages Repository名字就是moyang0909.github.io。 </font></p>
 </li>
@@ -364,6 +362,17 @@
 	</div>
 
     
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Diary//" class="article-tag-list-link color1">Diary</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
     
 
