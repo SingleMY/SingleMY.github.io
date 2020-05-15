@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="从零开始基于Hexo+GitHub搭建blog的历程, 墨阳">
+    <meta name="keywords" content="第一次用Git必看, 墨阳">
     <meta name="description" content="墨阳的的个人博客">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>从零开始基于Hexo+GitHub搭建blog的历程 | 墨阳</title>
+    <title>第一次用Git必看 | 墨阳</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -286,12 +286,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">从零开始基于Hexo+GitHub搭建blog的历程</h1>
+                    <h1 class="description center-align post-title">第一次用Git必看</h1>
                 </div>
             </div>
         </div>
@@ -420,6 +420,10 @@
                                 <span class="chip bg-color">随笔</span>
                             </a>
                         
+                            <a href="/tags/Git/">
+                                <span class="chip bg-color">Git</span>
+                            </a>
+                        
                     </div>
                     
                 </div>
@@ -441,7 +445,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-04-28
+                    2020-05-06
                 </div>
                 
 
@@ -450,14 +454,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.4k
+                    1.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    12 分
+                    4 分
                 </div>
                 
 
@@ -472,247 +476,92 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h1><hr>
-<p><font face="楷体" color="">　　作为软件工程专业大三的学生，随着接触的专业知识越来越多，搭建博客是必要的，当然可以选择当下受欢迎的博客网站<a href="https://www.csdn.net/" target="_blank" rel="noopener" title="CSDN博客首页">CSDN</a>、<a href="https://www.cnblogs.com/" target="_blank" rel="noopener" title="cnblog首页">博客园</a>和<a href="https://www.jianshu.com/" target="_blank" rel="noopener" title="简书首页">简书</a>等，我在这几个网站也都注册了账号，但在别人的网站总是有“约束”，不能体现一个软件开发者的追求，也不能满足我对知识的需求。但可以把自己的好文章多发布几个平台，增加阅读量。用框架搭建自己的博客也很简单，当然也可以自己写网站（后续更新）。闲话不多说，上干货。</font></p>
-<a id="more"></a>
-<h1 id="简介-本文只针对Windows平台"><a href="#简介-本文只针对Windows平台" class="headerlink" title="简介  (本文只针对Windows平台)"></a>简介  <font size="3">(本文只针对Windows平台)</font></h1><hr>
-<ul>
-<li>首先，<a href="https://guides.github.com/activities/hello-world/" target="_blank" rel="noopener" title="What is Github?">Github</a>提供代码托管功能，<a href="https://pages.github.com/" target="_blank" rel="noopener" title="What is Github Pages?">GitHub Page</a>可以把GitHub仓库中某一分支的代码由HTTP访问到,这两部分提供良好的服务器；接下来，前端网页使用<a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="noopener" title="博客框架">Hexo</a>简洁的博客框架构建；最后一步，就是把在本地编辑好的博客页面部署在GitHub上。<h2 id="思维导图"><a href="#思维导图" class="headerlink" title="思维导图"></a>思维导图</h2>
-</li>
-</ul>
-<ol>
-<li><h2 id="关于Hexo"><a href="#关于Hexo" class="headerlink" title="关于Hexo"></a>关于Hexo</h2></li>
-</ol>
-<ul>
-<li><p>Hexo是博客<a href="https://www.zhihu.com/question/19558524" target="_blank" rel="noopener" title="什么是框架？">框架</a>，框架特点是<em>快速、简洁且高效</em>，Hexo 使用 <a href="https://www.runoob.com/markdown/md-tutorial.html" target="_blank" rel="noopener" 菜鸟教程markdown""="">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
-</li>
-<li><p>Hexo基于<a href="https://nodejs.org/en/" target="_blank" rel="noopener" title="Node.js官网下载">Node.js</a>（简单说Node.js就是JavaScript的解析器）,并且我们通常使用hexo关于git管理组件：<a href="https://github.com/hexojs/hexo-deployer-git" target="_blank" rel="noopener" title="Git deployer plugin for Hexo">hexo-delopyer-git</a>发布博客文章,所以<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener" title="中文官网教程">安装Hexo</a>前一般先安装<strong>Node.js</strong>和<strong>Git</strong>环境。</p>
-</li>
-</ul>
-<h1 id="搭建历程"><a href="#搭建历程" class="headerlink" title="搭建历程"></a>搭建历程</h1><hr>
-<ol>
-<li><h2 id="在GitHub上建仓库"><a href="#在GitHub上建仓库" class="headerlink" title="在GitHub上建仓库"></a>在GitHub上建仓库</h2></li>
-</ol>
-<ul>
-<li><h3 id="注册登录账号（有账号请略过）"><a href="#注册登录账号（有账号请略过）" class="headerlink" title="注册登录账号（有账号请略过）"></a>注册登录账号（有账号请略过）</h3></li>
-</ul>
-<p>访问<a href="https://github.com/" target="_blank" rel="noopener">github</a>官网首页，输入邮箱地址，点击Get started按钮，然后填写用户名、密码等信息提交即可。</p>
-
-
-
-<p>点击<a href="https://github.com/login" target="_blank" rel="noopener">Sign in</a>按钮,输入用户名、密码登录即可。</p>
-
-
-<ul>
-<li><h3 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h3>
-
-</li>
-</ul>
-<p>点击右上角的“+”，选择new repository，然后填写仓库的相关信息，仓库名定义为: <em>你的用户名.github.io</em>　并且不能让仓库为空，可以勾选初始化一个README.md文件。然后完成即可。</p>
-
-
-<blockquote>
-<p><font face="“黑体”" size="3">注意: Github Pages的Repository名字是特定的，比如我Github账号是moyang0909，那么我Github Pages Repository名字就是 <em>moyang0909.github.io</em>。 </font></p>
+                <h1 id="git-使用细则"><a href="#git-使用细则" class="headerlink" title="git 使用细则"></a>git 使用细则</h1><h2 id="git-安装"><a href="#git-安装" class="headerlink" title="git 安装"></a>git 安装</h2><blockquote>
+<p><a href="https://git-scm.com/" target="_blank" rel="noopener">官网下载地址</a>git， 安装目录尽量不要选在系统盘，更改环境变量 HOME 的的值，可以更改 git bash 的默认工作区，即“~”的位置。在 HOME 值对应的目录下，.gitconfig 文件是 git 的全局配置文件。</p>
 </blockquote>
-<ul>
-<li><h3 id="使用Github-Pages"><a href="#使用Github-Pages" class="headerlink" title="使用Github Pages"></a>使用Github Pages</h3>
+ <a id="more"></a>
 
-</li>
+<h2 id="git-账户配置"><a href="#git-账户配置" class="headerlink" title="git 账户配置"></a>git 账户配置</h2><pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> config --global user.name  <span class="token string">"username"</span>  <span class="token comment" spellcheck="true">#--global全局配置，用户级别</span>
+<span class="token function">git</span> config --global user.email <span class="token string">"youremail@example.com"</span></code></pre>
+<h2 id="git-远程仓库使用"><a href="#git-远程仓库使用" class="headerlink" title="git 远程仓库使用"></a>git 远程仓库使用</h2><ul>
+<li>git 常用的远程仓库有<a href="https://github.com/" target="_blank" rel="noopener">github</a>,<a href="https://gitee.com/" target="_blank" rel="noopener">gitee</a>,<a href="https://about.gitlab.com/" target="_blank" rel="noopener">gitlab</a>等</li>
+<li>git 采用 ssh 协议传输，生成传输公钥：</li>
 </ul>
-<p>点击右上角Setting按钮，看到仓库设置信息，找到GitHub Pages选项，<br>看到如下图所示，表示仓库master分支代码可在GitHub Pages上成功访问了，试试在浏览器的地址栏输入”你github的用户名.github.io”吧！。图上箭头所指处是用于<a href="https://www.jianshu.com/p/da20ddc03cdf" target="_blank" rel="noopener" title="仅供参考">绑定自己的域名</a>，这里先不绑定了。</p>
-
-
-<ol start="2">
-<li><h2 id="本地安装Git环境"><a href="#本地安装Git环境" class="headerlink" title="本地安装Git环境"></a>本地安装Git环境</h2></li>
-</ol>
+<pre class=" language-bash"><code class="language-bash">ssh-keygen -t rsa -C <span class="token string">"youremail@example.com"</span></code></pre>
+<p>接下来系统提示命名文件名，并输入密码</p>
+<pre class=" language-bash"><code class="language-bash">Generating public/private rsa key pair.
+Enter <span class="token function">file</span> <span class="token keyword">in</span> <span class="token function">which</span> to save the key <span class="token punctuation">(</span>/e/Git/.ssh/id_rsa<span class="token punctuation">)</span>: a <span class="token comment" spellcheck="true">#&lt;filename>默认 id_rsa</span>
+Enter passphrase <span class="token punctuation">(</span>empty <span class="token keyword">for</span> no passphrase<span class="token punctuation">)</span>:<span class="token comment" spellcheck="true">#&lt;password> 一般两次Enter即可</span>
+Enter same passphrase again:
+Your identification has been saved <span class="token keyword">in</span> a.
+Your public key has been saved <span class="token keyword">in</span> a.pub.
+The key fingerprint is:<span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span></code></pre>
 <ul>
-<li><h3 id="Git是什么"><a href="#Git是什么" class="headerlink" title="Git是什么"></a>Git是什么</h3></li>
+<li>生成的公钥是在.ssh 文件夹下的 xx.pub 文件，在 git 远程仓库账户下添加公钥。</li>
 </ul>
+<h3 id="远程仓库项目本地更改"><a href="#远程仓库项目本地更改" class="headerlink" title="远程仓库项目本地更改"></a>远程仓库项目本地更改</h3><h4 id="从远程仓库-clone"><a href="#从远程仓库-clone" class="headerlink" title="从远程仓库 clone"></a>从远程仓库 clone</h4><pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> clone <span class="token operator">&lt;</span>远程仓库地址<span class="token operator">></span>  <span class="token comment" spellcheck="true"># 结尾是.git</span>
+<span class="token function">cd</span> 仓库名
+<span class="token function">git</span> config --local -l  <span class="token comment" spellcheck="true">#check the config information of local</span>
+或者 <span class="token function">git</span> remote -v     <span class="token comment" spellcheck="true">#查看远程仓库地址</span></code></pre>
+<ul>
+<li>一般是 clone 的远程仓库地址，.git 文件夹存在证明是 git 本地仓库。<br>.gitignore 文件是配置 git 上传时忽略哪些文件。</li>
+</ul>
+<h4 id="push-到远程仓库"><a href="#push-到远程仓库" class="headerlink" title="push 到远程仓库"></a>push 到远程仓库</h4><pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> add * 或 <span class="token function">git</span> add <span class="token operator">&lt;</span>filename<span class="token operator">></span> <span class="token comment" spellcheck="true">#添加到本地仓库暂存区（Staging area）</span>
+<span class="token function">git</span> commit -m <span class="token string">"做了哪些更改"</span>     <span class="token comment" spellcheck="true">#提交到本地仓库版本库</span>
+<span class="token function">git</span> remote add origin <span class="token operator">&lt;</span>远程仓库地址<span class="token operator">></span><span class="token comment" spellcheck="true">#要push的目标远程仓库地址</span>
+<span class="token function">git</span> status                     <span class="token comment" spellcheck="true">#查看git工作区（ working tree）状态</span>
+<span class="token function">git</span> push -u origin master <span class="token comment" spellcheck="true"># 将工作区的master分支推送到远程仓库master分支</span></code></pre>
+<ul>
+<li>-u 参数：远程仓库没有该分支即创建，并且把本地的 master 分支和远程的 master 分支关联起来，在以后的推送或者拉取时就可以简化命令。</li>
+</ul>
+<h3 id="本地新项目上传到远程仓库"><a href="#本地新项目上传到远程仓库" class="headerlink" title="本地新项目上传到远程仓库"></a>本地新项目上传到远程仓库</h3><ul>
+<li>在项目根目录 git bash here</li>
+</ul>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> init  <span class="token comment" spellcheck="true">#初始化git版本库，生成.git文件夹</span>
+<span class="token function">git</span> remote add origin <span class="token operator">&lt;</span>远程仓库地址<span class="token operator">></span>
+<span class="token function">git</span> add *
+<span class="token function">git</span> commit -m <span class="token string">"做了哪些更改"</span>
+<span class="token function">git</span> push -u origin master</code></pre>
+<ul>
+<li><h5 id="错误一：远程仓库已经更改"><a href="#错误一：远程仓库已经更改" class="headerlink" title="错误一：远程仓库已经更改"></a>错误一：远程仓库已经更改</h5>如果此时报错如下：</li>
+</ul>
+<pre class=" language-bash"><code class="language-bash"><span class="token operator">!</span> <span class="token punctuation">[</span>rejected<span class="token punctuation">]</span>        master -<span class="token operator">></span> master <span class="token punctuation">(</span>fetch first<span class="token punctuation">)</span>
+error: failed to push some refs to <span class="token string">'https://github.com/SingleMY/MoYang.git'</span>
+hint: Updates were rejected because the remote contains work that you <span class="token keyword">do</span>
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: <span class="token punctuation">(</span>e.g., <span class="token string">'git pull ...'</span><span class="token punctuation">)</span> before pushing again.
+hint: See the <span class="token string">'Note about fast-forwards'</span> <span class="token keyword">in</span> <span class="token string">'git push --help'</span> <span class="token keyword">for</span> details.</code></pre>
 <blockquote>
-<p>如果不了解Git是什么，可以参考<a href="https://www.liaoxuefeng.com/wiki/896043488029600" target="_blank" rel="noopener" title="最好的Git教程">廖雪峰老师的Git教程</a>或者<a href="https://www.cnblogs.com/best/p/7474442.html#_lab2_1_0" target="_blank" rel="noopener" title="理解Git工作原理">张果老师的Git笔记</a>。简言之，Git是分布式版本控制系统，这里我们用它连接远程的github仓库，管理代码，值得说的一点是有了git我们可以不用点击网页就可以下载github上的代码，只需要记得几个git命令，很方便、流行。</p>
+<p>说明远程仓库和本地版本库比对后，有的文件只在远程仓库有，本地版本库中没有，此时需要 pull 远程仓库文件到本地版本库：</p>
 </blockquote>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> branch --set-upstream-to<span class="token operator">=</span>origin/master  master     <span class="token comment" spellcheck="true">#把远程分支与本地分支关联</span>
+<span class="token function">git</span> pull</code></pre>
 <ul>
-<li><h3 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h3></li>
+<li><h5 id="错误二：未关联分支"><a href="#错误二：未关联分支" class="headerlink" title="错误二：未关联分支"></a>错误二：未关联分支</h5>如果不关联分支会报错：</li>
 </ul>
-<p><a href="https://git-scm.com/download/win" target="_blank" rel="noopener">官网下载Git</a>安装程序，选择下载<em>64-bit Git for Windows Setup</em>。</p>
+<pre class=" language-bash"><code class="language-bash">There is no tracking information <span class="token keyword">for</span> the current branch.
+Please specify <span class="token function">which</span> branch you want to merge with.
+See git-pull<span class="token punctuation">(</span>1<span class="token punctuation">)</span> <span class="token keyword">for</span> details.
 
+    <span class="token function">git</span> pull <span class="token operator">&lt;</span>remote<span class="token operator">></span> <span class="token operator">&lt;</span>branch<span class="token operator">></span>
 
-<p>下载完成后运行程序，一直Next配置默认就好了，如果需要设置就要仔细读一下安装界面上的选项。安装完成后打开Git bash(Git的命令行工具)，如下图。</p>
+If you wish to <span class="token keyword">set</span> tracking information <span class="token keyword">for</span> this branch you can <span class="token keyword">do</span> so with:
 
-
-<p>我这里把起始位置设置为E:/Git文件夹，就是在环境变量中找到系统变量的HOME值修改即可，不改也可以。还需要最后一步设置，在bash命令行输入：（小提示：git bash 的粘贴键是键盘的<em>insert</em>键）</p>
-<pre class=" language-bash"><code class="language-bash">    $ <span class="token function">git</span> config --global user.name <span class="token string">"Your Name"</span>
-    $ <span class="token function">git</span> config --global user.email <span class="token string">"youremail@example.com"</span></code></pre>
+    <span class="token function">git</span> branch --set-upstream-to<span class="token operator">=</span>origin/<span class="token operator">&lt;</span>branch<span class="token operator">></span> master</code></pre>
 <blockquote>
-<p>注意git config命令的–global参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置。</p>
-</blockquote>
-<ul>
-<li><h3 id="添加远程仓库"><a href="#添加远程仓库" class="headerlink" title="添加远程仓库"></a>添加远程仓库</h3></li>
-</ul>
-<p>由于你的本地Git仓库和GitHub仓库之间的传输是通过SSH加密的，所以，需要一点设置:</p>
-<p><strong>第1步：创建SSH Key:</strong></p>
-<p>在bash命令行输入：</p>
-<pre class=" language-bash"><code class="language-bash">   $ ssh-keygen -t rsa -C <span class="token string">"youremail@example.com"</span></code></pre>
-<p>你需要把邮件地址换成你自己的邮件地址，然后一路回车，使用默认值即可。如果一切顺利的话，可以在用户主目录里找到.ssh目录，里面有id_rsa和id_rsa.pub两个文件。</p>
-<p><strong>第2步：登陆GitHub，打开“Settings”，“SSH Keys”页面：</strong></p>
-<p>然后，点“Add SSH Key”，填上任意title，在Key文本框里粘贴id_rsa.pub文件的内容。</p>
-{% asset_img git-04.png github 托管 %}
-
-<p>点击“Add SSH key”，你就应该看到已经添加的key。Git还有很多知识，比如它可以本地版本库，可以多人协作等等……</p>
-<p><strong>至此，有关Github的工作就完成了！恭喜你完成了三分之一！</strong></p>
-<blockquote>
-<blockquote>
-<p>我们休息一会…… </p>
-</blockquote>
-</blockquote>
-<ol start="3">
-<li><h2 id="安装Node-js和Hexo"><a href="#安装Node-js和Hexo" class="headerlink" title="安装Node.js和Hexo"></a>安装Node.js和Hexo</h2></li>
-</ol>
-<ul>
-<li><h3 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h3><a href="https://nodejs.org/zh-cn/" target="_blank" rel="noopener" title="中文官网下载地址">官网下载Node.js</a>安装程序，建议下载稳定版本。</li>
-</ul>
-{% asset_img node-01.png node 官网 %}
-
-<p>下载完成后启动安装程序，也是一直Next，选择一个自定义的安装路径，比如我的安装路径为D:\development environment\node\。接着要配置环境变量：</p>
-{% asset_img node-02.png 环境变量 %}
-
-<p>打开控制面板，找到系统属性，依次点击高级系统设置，环境变量，找到用户变量下的Path变量，双击编辑添加值为Node.js的安装路径。然后一路确定保存设置即可。</p>
-{% asset_img node-03.png 环境变量添加 %}
-<ul>
-<li><h3 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h3></li>
-</ul>
-<p>打开命令行，进入Node.js的安装目录，执行如下命令：</p>
-<pre class=" language-npm"><code class="language-npm">    npm install -g hexo</code></pre>
-<p>  或</p>
-<pre class=" language-npm"><code class="language-npm">    npm install -g hexo-cli</code></pre>
-<p>使用<a href="https://www.runoob.com/nodejs/nodejs-npm.html" target="_blank" rel="noopener" title="What is npm?">npm</a>命令全局安装hexo完成,命令行别关。</p>
-<ol start="4">
-<li><h2 id="建立博客网站"><a href="#建立博客网站" class="headerlink" title="建立博客网站"></a>建立博客网站</h2></li>
-</ol>
-<p>安装 Hexo 完成后，请执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件。</p>
-<pre class=" language-hexo"><code class="language-hexo">    hexo init <folder>
-    cd <folder>
-    npm install          //安装依赖包</code></pre>
-<p><strong>至此，博客搭建成功</strong>！当然，仅仅是本地的，革命尚未成功。<br>新建完成后，指定文件夹的目录如下：</p>
-
-<ul>
-<li><h3 id="config-yml"><a href="#config-yml" class="headerlink" title="_config.yml"></a>_config.yml</h3></li>
-</ul>
-<blockquote>
-<p>其中<a href="https://hexo.io/zh-cn/docs/configuration" target="_blank" rel="noopener" title="修改配置">_config.yml</a>文件是配置信息文件，接下来我们来熟悉、并修改以下内容。</p>
-</blockquote>
-<pre><code>    title:        网站标题//修改为自己的网站名
-    author:       您的名字
-    language:     网站使用的语言。//使用不同的主题可能需要设置 成不同的值，请参考你的主题的文档自行设置，常见的有 zh-Han和 zh-CN。
-    timezone:     网站时区。//Hexo 默认使用您电脑的时区。一般的，可以使用 Asia/Shanghai。
-    url:          网址//修改为你的github pages地址
-    theme:        当前主题名称。//暂时不修改一会更改主题时需要修改这里</code></pre><p>以下三个参数尤其重要：</p>
- 
-
-<p><strong>如果某一项参数没有就新建，注意冒号后边有空格。如果你忘记了github 代码仓库的clone地址，可以打开把图上的SingleMY换成你的github账户名。<a href="https://github.com/你的github账户/你的github账户.github.io.git" target="_blank" rel="noopener">https://github.com/你的github账户/你的github账户.github.io.git</a></strong>  </p>
-<p>接下来，回到你的cmd窗口，执行如下命令：</p>
-<pre><code>    npm install hexo-deployer-git --save 
-    hexo g   (生成静态页面)
-    hexo d   (将本地blog部署到github的仓库)</code></pre><p>现在，试试在浏览器的地址栏输入：“你的用户名.github.io”，此时，你应该会看到这样的界面：</p>
-
-
-<blockquote>
-<p><strong>至此，一个博客框架就这样部署完了，接下来我们熟悉下这个框架的结构，并且更改下主题，因为这个主题实在是太丑了</strong></p>
+<p>使用 git 在本地新建一个分支后，需要做远程分支关联。如果没有关联，git 会在下面的操作中提示你显示的添加关联。<br>关联目的是在执行 git pull, git push 操作时就不需要指定对应的远程分支，你只要没有显示指定，git pull 的时候，就会提示你。解决办法如上。</p>
 </blockquote>
 <ul>
-<li><h3 id="themes"><a href="#themes" class="headerlink" title="themes"></a>themes</h3></li>
+<li><h5 id="错误三"><a href="#错误三" class="headerlink" title="错误三"></a>错误三</h5></li>
 </ul>
-<p><a href="https://hexo.io/zh-cn/docs/themes" target="_blank" rel="noopener" title="中文官网主题介绍">主题</a> 文件夹。Hexo 会根据主题来生成静态页面。</p>
+<pre class=" language-bash"><code class="language-bash">fatal: refusing to merge unrelated histories</code></pre>
 <blockquote>
-<p>可以去<a href="https://hexo.io/themes/" target="_blank" rel="noopener">官网选择主题</a>，下载按钮是蓝色粗体标题字样。更推荐点击<a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="noopener" title="下载主题">这里</a><br>选择自己喜欢的主题，其中较为流行的一个是<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">NexT</a>，不过我更喜欢<a href="https://github.com/JoeyBling/hexo-theme-yilia-plus" target="_blank" rel="noopener">yilia-plus</a>。</p>
+<p>这个问题是因为两个根本不相干的 git 库，一种方法是从远端库拉下来代码，本地要加入的代码放到远端库下载到本地的库，然后提交上去因为这样的话，你基于的库就是远端的库。当然这样处理过于麻烦，可以使用强制指令：</p>
 </blockquote>
-
-
-<blockquote>
-<p>在刚刚那个网站上，点击右边的链接可以看到主题的Demo，选则一个喜欢的主题然后点击左边的链接进入github上（以yilia-plus为例）：</p>
-</blockquote>
-
-
-<p>按上图所示，依次执行命令：</p>
-<pre class=" language-git"><code class="language-git">    cd ./themes/
-    git clone --depth=1 https://github.com/JoeyBling/hexo-theme-yilia-plus.git ./yilia-plus</code></pre>
-<p>这时你会发现themes文件夹下多了一个yilia-plus文件夹。</p>
-
-
-<p>然后修改hexo根目录下的 _config.yml ➡️ <strong>theme: yilia-plus</strong>。</p>
-<blockquote>
-<p>选择它的原因除了美观以外，最重要的原因是它功能集成的全，当然这都需要自己一步步完成。参考它的github网站。</p>
-</blockquote>
-<blockquote>
-<p>如果你也选择了这个主题，很高兴接下来我将对这个主题进行一步步的探索，完善功能。<a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/wiki/yilia-plus%E6%BA%90%E7%A0%81%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E5%8F%8A%E6%9E%84%E5%BB%BA%E9%A1%BB%E7%9F%A5" target="_blank" rel="noopener">yilia-plus的构建须知</a>，值得注意的是需要安装ejs - 前端模板、sass - css预编译和webpack - 构建工具，都可以通过npm安装：</p>
-</blockquote>
-<pre class=" language-npm"><code class="language-npm">    npm install ejs
-    npm install -g sass
-    npm install webpack -g</code></pre>
-<blockquote>
-<p>关于主题的配置文件，参考作者提供默认配置即可，然后把作者的相关信息替换成自己的即可。注解已经很详细，就是功能尚不完善。</p>
-</blockquote>
-<blockquote>
-<p>打开命令行进入博客根目录，执行如下命令：</p>
-</blockquote>
-<pre><code>   hexo clean  (清除public下的静态文件)
-   hexo g     （重新生成静态blog）
-   hexo d     （将本地blog部署到github的仓库）
-   //每次对博客更改后，都执行这几条命令，部署博客。</code></pre><blockquote>
-<p>好了，试试在浏览器的地址栏输入：“你的github用户名.github.io”，你将会看到如下主题的blog页面：</p>
-</blockquote>
-
-
-<blockquote>
-<p>当然，左侧的GIF动图和下雪特效以及头像等都需要修改<a href="https://hexo.io/zh-cn/docs/themes" target="_blank" rel="noopener">主题目录</a>下的文件。<em>好了，关于主题我一时半会也讲不清楚，后续我会继续记录自己应用各种功能的过程，敬请关注！</em>看作者的博客请点击<a href="https://zhousiwei.gitee.io/" target="_blank" rel="noopener">这里</a>。</p>
-</blockquote>
-<ul>
-<li><h3 id="scaffolds"><a href="#scaffolds" class="headerlink" title="scaffolds"></a>scaffolds</h3></li>
-</ul>
-<blockquote>
-<p><a href="https://hexo.io/zh-cn/docs/writing" target="_blank" rel="noopener" title="中文官网模板介绍">模版</a> 文件夹。当您新建文章时，Hexo 会根据 scaffold 来建立文件。Hexo的模板是指在新建的文章文件中默认填充的内容。例如，如果您修改scaffold/post.md中的Front-matter内容，那么每次新建一篇文章时都会包含这个修改。</p>
-</blockquote>
-
-
-<p>关于模板，只需要了解到它默认有三种形式（layout），分别是post，page和draft。当你执行创建一篇新的文章命令：</p>
-<pre class=" language-hexo"><code class="language-hexo">    hexo new [layout] <title>  </code></pre>
-<blockquote>
-<p>如果不选择layout（模板）种类，默认是post，会根据配置信息在source文件夹下的_post文件夹下生成一个名为title.md的文件，如 hexo new “Hello world”。模板可以自定义。</p>
-</blockquote>
-<ul>
-<li><h3 id="source"><a href="#source" class="headerlink" title="source"></a>source</h3>资源文件夹是存放用户资源的地方。除 _posts 文件夹之外，开头命名为 _ (下划线)的文件 / 文件夹和隐藏的文件将会被忽略。Markdown 和 HTML 文件会被解析并放到 public 文件夹，而其他文件会被拷贝过去。简单的理解就是我们新建Markdown格式文章放在该文件夹下的_post文件夹下，就会被发布在博客网站上。<br>新建文章的指令上面我们已经提到，不再重复。注意，修改主目录下的_config.yml的</li>
-</ul>
-{% asset_img asset.png assets %}
-
-<blockquote>
-<p>Hexo将会在你每一次通过</p>
-</blockquote>
-<pre class=" language-hexo"><code class="language-hexo">    hexo new [layout] <title></code></pre>
-<p>命令创建新文章时自动创建一个文件夹。这个资源文件夹将会有与这个文章文件一样的名字。将所有与你的文章有关的资源放在这个关联文件夹中之后，你可以通过相对路径来引用它们。如你把一个 example.jpg 图片放在了你的资源文件夹中，正确的引用图片方式是使用下列的标签插件而不是 markdown ：</p>
-<pre><code>  {% asset_img example.jpg This is an example image %}</code></pre><p>通过这种方式，图片将会同时出现在文章和主页以及归档页中。</p>
-<blockquote>
-<p><strong>至此关于hexo的介绍就结束了，我只不过是把一些资料整理了下，按自己学习的历程介绍下，希望能有所帮助。</strong></p>
-</blockquote>
-<h2 id="浅谈Markdown"><a href="#浅谈Markdown" class="headerlink" title="浅谈Markdown"></a>浅谈Markdown</h2><blockquote>
-<p>我们平时使用的word等软件一般是富文本编辑，富文本格式（Rich Text Format, 一般简称为RTF）是由微软公司开发的跨平台文档格式。最大的特点是：<strong>所见即所得</strong>。比如可以直接把字体变粗，添加颜色。</p>
-</blockquote>
-<blockquote>
-<p>而Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。比如“ # 一级标题 ”用#号表示一级标题会把字体格式改变。</p>
-</blockquote>
-<blockquote>
-<p>刚开始使用Markdown写文章都会感觉太笨了这种方法，熟练<a href="https://www.runoob.com/markdown/md-block.html" target="_blank" rel="noopener">Markdown的语法</a>规则后，发现比富文本好用很多，最大的优点就是格式统一，写出来的东西不会出现格式错误。</p>
-</blockquote>
-<blockquote>
-<p>这里我推荐使用VScode+Markdown Preview Enhanced插件编写Markdown文章。我的本篇文章的Markdown格式上传<a href="https://gitee.com/moyanghualing/MoyangBlog" target="_blank" rel="noopener">gitee代码仓库</a>，用了大多数常见语法，对比网站效果，初学者加以参考！</p>
-</blockquote>
-<h1 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h1><blockquote>
-<p>博客一直是自己想拥有的，如今能借助别人的技术，完成一个不错的简易博客已经很满意了。特别感谢文章中提到的学习网站。</p>
-</blockquote>
-<ul>
-<li><a href="https://www.liaoxuefeng.com/wiki/896043488029600" target="_blank" rel="noopener">廖雪峰的官方网站</a></li>
-<li><a href="https://zhousiwei.gitee.io/" target="_blank" rel="noopener">試毅-思伟的个人博客</a></li>
-<li><a href="https://www.cnblogs.com/dantefung/p/d8c48ba8030bcab7cfc364d423186fee.html" target="_blank" rel="noopener">Hexo+github搭建个人博客</a></li>
-</ul>
+<pre class=" language-bash"><code class="language-bash"> <span class="token function">git</span> pull --allow-unrelated-histories</code></pre>
+<p>然后正常 push 就可以了，以上问题一般是因为远程仓库有个 README.md 文件，<strong>最好的解决办法就是建仓库时别勾选任何，建一个空的仓库。</strong></p>
+<h3 id="git-版本控制技术的工作原理"><a href="#git-版本控制技术的工作原理" class="headerlink" title="git 版本控制技术的工作原理"></a>git 版本控制技术的工作原理</h3><p><img src="http://qiniu.1542051400.club/blog/git1.png" alt="git原理"></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -756,7 +605,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://singlemy.github.io/posts/undefined/">https://singlemy.github.io/posts/undefined/</a>
+                    <a href="https://singlemy.github.io/posts/ff30c72a.html/">https://singlemy.github.io/posts/ff30c72a.html/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -796,6 +645,10 @@
                             
                                 <a href="/tags/%E9%9A%8F%E7%AC%94/">
                                     <span class="chip bg-color">随笔</span>
+                                </a>
+                            
+                                <a href="/tags/Git/">
+                                    <span class="chip bg-color">Git</span>
                                 </a>
                             
                         </div>
@@ -1230,32 +1083,33 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/undefined/">
+                <a href="/posts/312e9705.html/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="第一次用Git必看">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="一年后再拿起VScode(1)">
                         
-                        <span class="card-title">第一次用Git必看</span>
+                        <span class="card-title">一年后再拿起VScode(1)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            git 使用细则git 安装
-官网下载地址git， 安装目录尽量不要选在系统盘，更改环境变量 HOME 的的值，可以更改 git bash 的默认工作区，即“~”的位置。在 HOME 值对应的目录下，.gitconfig 文件是 git 的
+                            VScode的代码美化–vue项目插件：eslint+vetur+prettier
+
+序言一年前跟学长尝试了一个vue项目，第一次接触编辑器，以前学的C语言和Java原来编译他们那个叫IDE，是集成了编辑器和编译器的，用过ＶS studio
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-06
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-08
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Diary/" class="post-category">
-                                    Diary
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
                                 </a>
                             
                             
@@ -1265,12 +1119,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%9A%8F%E7%AC%94/">
-                        <span class="chip bg-color">随笔</span>
-                    </a>
-                    
-                    <a href="/tags/Git/">
-                        <span class="chip bg-color">Git</span>
+                    <a href="/tags/vscode/">
+                        <span class="chip bg-color">vscode</span>
                     </a>
                     
                 </div>
@@ -1281,10 +1131,10 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/undefined/">
+                <a href="/posts/1c6b95f8.html/">
                     <div class="card-image">
                         
                         
@@ -1316,7 +1166,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
