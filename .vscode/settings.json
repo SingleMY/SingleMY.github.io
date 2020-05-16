@@ -1,0 +1,7 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll": false
+  },
+  // 全局使用保存自动格式化功能，vue项目关闭此项
+  "editor.formatOnSave": false
+}
