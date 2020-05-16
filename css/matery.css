@@ -112,7 +112,7 @@ blockquote {
 }
 
 pre {
-    padding: 1.5rem 1.5rem 1.5rem 3.3rem !important;
+    padding: 2.5rem 1.5rem 1.5rem 1.5rem !important;
     margin: 1rem 0 !important;
     background: #272822;
     overflow: auto;
@@ -266,11 +266,11 @@ mark {
 }
 
 .bg-color {
-    background-image: linear-gradient(to right, #62768a 0%, #bd6353 100%);
+    background-image: linear-gradient(to right, #244c97 0%, #bd6353 100%);
 }
 
 .text-color {
-    color: #a2c01b !important;
+    color: #1bc06e !important;
 }
 
 .white-color {
@@ -282,7 +282,7 @@ mark {
     position: fixed;
     bottom: 0;
     z-index: 300;
-    background: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);
+    background: linear-gradient(to right, #4cbf30 0%, #4d92a0 100%);
     opacity: 0.8;
 }
 
