@@ -146,7 +146,7 @@ feed:
 baidu_url_submit:
   count: 100                 # 提交最新的多少个链接
   host: www.1542051400.club       # 在百度站长平台中添加的域名
-  token: EZbAi5F6DxiPvO8D           # 秘钥
+  token: ************(baidu_token)           # 秘钥
   path: baidu_urls.txt
 # douban:
 #   user: 169608885
