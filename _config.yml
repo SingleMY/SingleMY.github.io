@@ -161,11 +161,12 @@ baidu_url_submit:
 #     title: '爱打游戏的宅男'
 #     quote: '还挺好玩的'
 #   timeout: 10000
+
 # lazyload configuration  2019.08.14
-lazyload:
-  enable: true 
-  onlypost: true
-  loadingImg: https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg    # eg ./images/loading.gif
+# lazyload:
+#   enable: false 
+#   onlypost: true
+#   loadingImg: https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg    # eg ./images/loading.gif
 # # abbrlink config
 abbrlink:
   alg: crc32 #support crc16(default) and crc32
@@ -191,8 +192,8 @@ deploy:
   
 - type: baidu_url_submitter #新加的主动推送 
 - type: git
-  repository: https://gitee.com/SingleMY/blog.git
-  branch: master
-- type: git
   repository: https://github.com/SingleMY/SingleMY.github.io.git
   branch: master
+# - type: git
+#   repository: https://gitee.com/SingleMY/blog.git
+#   branch: master
