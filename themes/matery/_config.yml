@@ -524,8 +524,8 @@ subtitle:
   startDelay: 300 # 开始延迟
   typeSpeed: 100 # 打字速度
   backSpeed: 50 # 删除速度
-  sub1: 少壮不努力，老大徒伤悲
-  sub2: Never give up!
+  sub1: 温柔的墨，热烈的阳
+  sub2: 你还在犹豫的时候，有人已先行
 
 # 手机二级菜单.
 navMenu:
