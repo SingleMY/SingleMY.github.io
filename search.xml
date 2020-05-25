@@ -54,6 +54,33 @@
     
     
     <entry>
+      <title>人工智能基础</title>
+      <link href="/posts/a1bded03.html/"/>
+      <url>/posts/a1bded03.html/</url>
+      
+        <content type="html"><![CDATA[<h1 id="人工智能基础知识总结"><a href="#人工智能基础知识总结" class="headerlink" title="人工智能基础知识总结"></a>人工智能基础知识总结</h1><h2 id="概念及其发展历史（一）"><a href="#概念及其发展历史（一）" class="headerlink" title="概念及其发展历史（一）"></a>概念及其发展历史（一）</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><ul><li>机器或软件所展现的智能</li><li>学术研究领域的名称</li><li>如何创建计算机和计算机软件使之具有智能行为</li></ul><!--less--><h3 id="发展历史"><a href="#发展历史" class="headerlink" title="发展历史"></a>发展历史</h3><h4 id="诞生"><a href="#诞生" class="headerlink" title="诞生"></a>诞生</h4><ul><li>标志：<br>1956 年的“达特茅斯夏季人工智能研究计划”会议。</li><li>相关事件：<br>图灵测试——旨在提供一种令人满意的关于智能的可操作定义<br>视觉图灵测试——是受人类理解图像能力的启发而提出的，是采用一个操作员辅助设备、根据给定的图像产生随机的二元问题序列。<br>中文屋——试图揭示计算机绝不能描述为有“智力”或“知性”，不管它多么智能。结论：图灵测试的结论是不充分的。</li><li>人物：<br>AI 之父：Marvin Lee Minsky,John MacCarthy,Herbert ASimon,Allen Newell</li></ul><h4 id="发展"><a href="#发展" class="headerlink" title="发展"></a>发展</h4><ul><li>1950–1956 The Birth of AI AI 的诞生</li><li>1956–1974 The Golden Years 黄金之年</li><li>1974–1980 The First AI Winter 第一个 AI 之冬</li><li>1980–1987 The Boom of AI AI 的繁荣期</li><li>1987–1993 The Second AI Winter 第二个 AI 之冬</li><li>1993–Present The Breakthrough 突破</li></ul><h4 id="研究领域"><a href="#研究领域" class="headerlink" title="研究领域"></a>研究领域</h4><ul><li>知识表示</li><li>机械感知</li><li>机械思维</li><li>机械学习</li><li>机械行为</li></ul><h4 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h4><ul><li>弱人工智能：它是无意识的 AI，专注于一个具体的任务。</li><li>强人工智能：意味着机器具有将智能用于处理任何问题的能力。它是人工智能研究的主要目标。</li><li>超人工智能：是一个假定的智能体，拥有远远超过聪明和最有天赋的人类大脑的智能。</li></ul><h4 id="基础学科"><a href="#基础学科" class="headerlink" title="基础学科"></a>基础学科</h4><ul><li>哲学</li><li>数学</li><li>经济学</li><li>神经科学</li><li>心理学</li><li>计算机工程</li><li>控制理论和控制论</li><li>语言学</li></ul><h4 id="典型问题"><a href="#典型问题" class="headerlink" title="典型问题"></a>典型问题</h4><ul><li>计算机视觉</li><li>图像处理</li><li>VR, AR 和 MR</li><li>模式识别</li><li>智能诊断</li><li>博弈论和策略规划</li><li>AI 游戏和游戏机器人</li><li>机器翻译</li><li>自然语言处理和聊天机器人</li><li>非线性控制和机器人技术</li><li>智能生活</li><li>自动推理</li><li>自动化</li><li>生物计算</li><li>概念计算</li><li>数据挖掘</li><li>知识表示</li><li>语义 Web</li><li>垃圾邮件过滤</li><li>诉讼</li><li>机器人学</li><li>混合人工智能</li><li>智能代理</li><li>智能控制</li></ul><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> Diary </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 随笔 </tag>
+            
+            <tag> agent </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>一年后再拿起VScode(1)</title>
       <link href="/posts/312e9705.html/"/>
       <url>/posts/312e9705.html/</url>
