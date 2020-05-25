@@ -29,6 +29,31 @@
     
     
     <entry>
+      <title>projectScropeManagment</title>
+      <link href="/posts/ef2e3874.html/"/>
+      <url>/posts/ef2e3874.html/</url>
+      
+        <content type="html"><![CDATA[<h1 id="项目范围管理"><a href="#项目范围管理" class="headerlink" title="项目范围管理"></a>项目范围管理</h1><p>为达成产品范围所实施的所有活动。产品范围变化项目范围一定变化，反之不然。</p><h2 id="一、-收集需求（Collect-Requirement）"><a href="#一、-收集需求（Collect-Requirement）" class="headerlink" title="一、 收集需求（Collect Requirement）"></a>一、 收集需求（Collect Requirement）</h2><ol><li>技术需求</li><li>项目管理需求</li></ol><a id="more"></a><ul><li>挖掘客户需求：客户提出的不一定是真的需求</li><li>产品需求和商业需求</li></ul><ol start="3"><li><p>输入：</p></li><li><p>收集需求的方法：</p></li></ol><blockquote><p>4.1 Group Creativity Techniques</p></blockquote><ul><li><p>头脑风暴</p><p>特点：面对面的，快（优点），结果不客观（缺点）。<br>具体表现：一言旁；考虑不成熟。</p></li></ul><ul><li><p>Delphi（专家判断）</p><p>特点：背对背，客观（优点），慢（缺点）。</p></li><li><p>质量功能部署 QSD：</p><p>识别客户满意的关键要素。产生措施。实施措施。</p></li><li><p>思维导图</p></li><li><p>姻亲图：分类</p></li><li><p>Multicriteria decision analysis</p><blockquote><p>4.2 Group Decision Making Techniques</p></blockquote></li><li><p>需求分析跟踪矩阵：</p><ul><li>需求描述</li><li>商业需求、机遇、产品目标、目的</li><li>项目目的</li><li>产出物</li><li>产品设计</li><li>产品生产，研发</li><li>测试结果</li></ul></li></ul><h2 id="二、-定义范围（Define-Scope）"><a href="#二、-定义范围（Define-Scope）" class="headerlink" title="二、 定义范围（Define Scope）"></a>二、 定义范围（Define Scope）</h2><ol><li>Expert judgement（专家判断）</li><li>Product analysis</li></ol><ul><li>价值分析：识别功能，确定价值，实现功能。</li></ul><h3 id="项目范围说明书："><a href="#项目范围说明书：" class="headerlink" title="项目范围说明书："></a>项目范围说明书：</h3><ul><li>项目范围描述：比 project charter 更详细</li><li>用户接受标准</li><li>可交付性：</li><li>项目边界：什么不是我应该提交的，什么是应该提交的。</li><li>限制条件：针对范围的。</li><li>假设条件：</li></ul><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 软件项目 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 随笔 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>SpringMVC02</title>
       <link href="/posts/88534fa4.html/"/>
       <url>/posts/88534fa4.html/</url>
@@ -98,6 +123,31 @@
         <tags>
             
             <tag> vscode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>project charter</title>
+      <link href="/posts/b0e6f2fc.html/"/>
+      <url>/posts/b0e6f2fc.html/</url>
+      
+        <content type="html"><![CDATA[<h1 id="软件项目任务书内容"><a href="#软件项目任务书内容" class="headerlink" title="软件项目任务书内容"></a>软件项目任务书内容</h1><ol><li>组织方授权项目经理去做事</li></ol><a id="more"></a><ol start="2"><li>项目背景信息</li><li>项目经理职责</li><li>项目预算<br>企业项目经验</li><li>风险管理<br>适当的考虑风险<br>比如：三峡项目，考虑到是否会影响环境，具体分析不在是这个阶段给出</li><li>应用场景介绍</li><li>项目周期</li><li>项目约束和限制条件</li><li>项目目标<br>什么是项目范围，什么是产品范围？<br>什么样算是成功：项目预算（budget），时间期限，质量目标。</li><li>项目边界</li></ol><h1 id="项目章程存在的意义"><a href="#项目章程存在的意义" class="headerlink" title="项目章程存在的意义"></a>项目章程存在的意义</h1><ul><li>责权<br>PMI标准<br>.</li></ul><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 软件项目 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 随笔 </tag>
             
         </tags>
       
