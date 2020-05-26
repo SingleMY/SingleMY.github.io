@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="人工智能基础, 软件工程领域技术学习记录与分享">
+    <meta name="keywords" content="CSS1, 软件工程领域技术学习记录与分享">
     <meta name="description" content="墨阳的的个人博客,主要研究软件开发过程和前后端开发">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>人工智能基础 | 墨阳</title>
+    <title>CSS1 | 墨阳</title>
     <link rel="icon" type="image/png" href="/medias/logo.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -415,12 +415,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">人工智能基础</h1>
+                    <h1 class="description center-align post-title">CSS1</h1>
                 </div>
             </div>
         </div>
@@ -537,12 +537,8 @@
           
           <div class="article-tag">
             
-            <a href="/tags/%E9%9A%8F%E7%AC%94/">
-              <span class="chip bg-color">随笔</span>
-            </a>
-            
-            <a href="/tags/agent/">
-              <span class="chip bg-color">agent</span>
+            <a href="/tags/CSS/">
+              <span class="chip bg-color">CSS</span>
             </a>
             
           </div>
@@ -553,8 +549,8 @@
           <div class="post-cate">
             <i class="fas fa-bookmark fa-fw icon-category"></i>
             
-            <a href="/categories/Diary/" class="post-category">
-              Diary
+            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+              前端
             </a>
             
           </div>
@@ -565,16 +561,16 @@
       <div class="post-info">
         
         <div class="post-date info-break-policy">
-          <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp; 2020-05-09
+          <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp; 2020-05-26
         </div>
           
         <div class="info-break-policy">
-          <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp; 623
+          <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp; 805
         </div>
          
         <div class="info-break-policy">
           <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-          2 分
+          3 分
         </div>
          
         <span id="busuanzi_container_page_pv" class="info-break-policy"></span>
@@ -586,74 +582,69 @@
     <hr class="clearfix" />
     <div class="card-content article-card-content">
       <div id="articleContent">
-        <h1 id="人工智能基础知识总结"><a href="#人工智能基础知识总结" class="headerlink" title="人工智能基础知识总结"></a>人工智能基础知识总结</h1><h2 id="概念及其发展历史（一）"><a href="#概念及其发展历史（一）" class="headerlink" title="概念及其发展历史（一）"></a>概念及其发展历史（一）</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><ul>
-<li>机器或软件所展现的智能</li>
-<li>学术研究领域的名称</li>
-<li>如何创建计算机和计算机软件使之具有智能行为</li>
+        <h2 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h2><p>HTML和CSS别混为一谈。</p>
+<h2 id="预备知识梳理"><a href="#预备知识梳理" class="headerlink" title="预备知识梳理"></a>预备知识梳理</h2><ol>
+<li>HTML的元素大体上被分为两类：块级元素和内联元素。块级元素在浏览器显示时，通常会以新行来开始（和结束），块元素是一个元素，占用了全部宽度，在前后都是换行符,比如最常见的<code>&lt;div&gt;</code>和<code>&lt;h1&gt;, &lt;p&gt;, &lt;ul&gt;, &lt;table&gt;</code>;内联元素最常见的是<code>&lt;span&gt;</code>除此之外还有<code>&lt;b&gt;, &lt;td&gt;, &lt;a&gt;, &lt;img&gt;</code>,内联元素在显示时通常不会以新行开始,内联元素只需要必要的宽度，不强制换行。</li>
+<li>CSS样式的优先级：<br>内联样式）Inline style &gt; （内部样式）Internal style sheet &gt;（外部样式）External style sheet &gt; 浏览器默认样式</li>
+</ol>
+<ul>
+<li>通用选择器（*）</li>
+<li>元素(类型)选择器</li>
+<li>类选择器</li>
+<li>属性选择器</li>
+<li>伪类</li>
+<li>ID 选择器</li>
+<li>内联样式</li>
+<li>!important 规则例外</li>
 </ul>
-<!--less-->
-
-<h3 id="发展历史"><a href="#发展历史" class="headerlink" title="发展历史"></a>发展历史</h3><h4 id="诞生"><a href="#诞生" class="headerlink" title="诞生"></a>诞生</h4><ul>
-<li>标志：<br>1956 年的“达特茅斯夏季人工智能研究计划”会议。</li>
-<li>相关事件：<br>图灵测试——旨在提供一种令人满意的关于智能的可操作定义<br>视觉图灵测试——是受人类理解图像能力的启发而提出的，是采用一个操作员辅助设备、根据给定的图像产生随机的二元问题序列。<br>中文屋——试图揭示计算机绝不能描述为有“智力”或“知性”，不管它多么智能。结论：图灵测试的结论是不充分的。</li>
-<li>人物：<br>AI 之父：Marvin Lee Minsky,John MacCarthy,Herbert ASimon,Allen Newell</li>
+<h2 id="Display属性"><a href="#Display属性" class="headerlink" title="Display属性"></a>Display属性</h2><h3 id="把块级元素转变成内联元素"><a href="#把块级元素转变成内联元素" class="headerlink" title="把块级元素转变成内联元素"></a>把块级元素转变成内联元素</h3><pre class="line-numbers language-css"><code class="language-css"><span class="token property">display</span><span class="token punctuation">:</span>inline<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="把内联元素转变成块级元素"><a href="#把内联元素转变成块级元素" class="headerlink" title="把内联元素转变成块级元素"></a>把内联元素转变成块级元素</h3><pre class="line-numbers language-css"><code class="language-css"><span class="token property">display</span><span class="token punctuation">:</span>block<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><ul>
+<li><p><code>display:inline-block</code>– 显示为内联块元素，表现为同行显示并可修改宽高内外边距等属性,我们常将<code>&lt;ul&gt;</code>元素加上display:inline-block样式，原本垂直的列表就可以水平显示了。</p>
+</li>
+<li><p><code>display:none</code></p>
+</li>
 </ul>
-<h4 id="发展"><a href="#发展" class="headerlink" title="发展"></a>发展</h4><ul>
-<li>1950–1956 The Birth of AI AI 的诞生</li>
-<li>1956–1974 The Golden Years 黄金之年</li>
-<li>1974–1980 The First AI Winter 第一个 AI 之冬</li>
-<li>1980–1987 The Boom of AI AI 的繁荣期</li>
-<li>1987–1993 The Second AI Winter 第二个 AI 之冬</li>
-<li>1993–Present The Breakthrough 突破</li>
+<blockquote>
+<p>visibility: hidden 相当于 display:none，能把元素隐藏起来，但两者的区别在于：</p>
+</blockquote>
+<ol>
+<li>display:none 元素不再占用空间。</li>
+<li>visibility: hidden 使元素在网页上不可见，但仍占用空间。</li>
+</ol>
+<h3 id="弹性布局"><a href="#弹性布局" class="headerlink" title="弹性布局"></a>弹性布局</h3><pre class="line-numbers language-css"><code class="language-css"><span class="token property">display</span><span class="token punctuation">:</span>flex<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>设为Flex布局以后，子元素的<strong>float</strong>、clear和<strong>vertical-align</strong>属性将失效。</p>
+<ol>
+<li>flex-direction <strong>容器内</strong>元素的排列方向(默认横向排列)</li>
+</ol>
+<ul>
+<li><code>flex-direction:row;</code> 沿水平主轴让元素从左向右排列</li>
+<li><code>flex-direction:column;</code> 让元素沿垂直主轴从上到下垂直排列</li>
 </ul>
-<h4 id="研究领域"><a href="#研究领域" class="headerlink" title="研究领域"></a>研究领域</h4><ul>
-<li>知识表示</li>
-<li>机械感知</li>
-<li>机械思维</li>
-<li>机械学习</li>
-<li>机械行为</li>
+<ol start="2">
+<li>justify-content 元素在主轴（页面）上的排列</li>
+</ol>
+<ul>
+<li><code>justify-content:center;</code>元素在主轴（页面）上居中排列</li>
+<li><code>justify-content:flex-start;</code>元素在主轴（页面）上由左或者上开始排列</li>
+<li><code>justify-content:flex-end;</code>元素在主轴（页面）上由右或者下开始排列</li>
+<li><code>justify-content:space-between;</code>元素在主轴（页面）上左右两端或者上下两端开始排列</li>
+<li><code>justify-content:space-around;</code>每个元素两侧的间隔相等。所以，元素之间的间隔比元素与边框的间隔大一倍。</li>
 </ul>
-<h4 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h4><ul>
-<li>弱人工智能：它是无意识的 AI，专注于一个具体的任务。</li>
-<li>强人工智能：意味着机器具有将智能用于处理任何问题的能力。它是人工智能研究的主要目标。</li>
-<li>超人工智能：是一个假定的智能体，拥有远远超过聪明和最有天赋的人类大脑的智能。</li>
-</ul>
-<h4 id="基础学科"><a href="#基础学科" class="headerlink" title="基础学科"></a>基础学科</h4><ul>
-<li>哲学</li>
-<li>数学</li>
-<li>经济学</li>
-<li>神经科学</li>
-<li>心理学</li>
-<li>计算机工程</li>
-<li>控制理论和控制论</li>
-<li>语言学</li>
-</ul>
-<h4 id="典型问题"><a href="#典型问题" class="headerlink" title="典型问题"></a>典型问题</h4><ul>
-<li>计算机视觉</li>
-<li>图像处理</li>
-<li>VR, AR 和 MR</li>
-<li>模式识别</li>
-<li>智能诊断</li>
-<li>博弈论和策略规划</li>
-<li>AI 游戏和游戏机器人</li>
-<li>机器翻译</li>
-<li>自然语言处理和聊天机器人</li>
-<li>非线性控制和机器人技术</li>
-<li>智能生活</li>
-<li>自动推理</li>
-<li>自动化</li>
-<li>生物计算</li>
-<li>概念计算</li>
-<li>数据挖掘</li>
-<li>知识表示</li>
-<li>语义 Web</li>
-<li>垃圾邮件过滤</li>
-<li>诉讼</li>
-<li>机器人学</li>
-<li>混合人工智能</li>
-<li>智能代理</li>
-<li>智能控制</li>
-</ul>
+<ol start="3">
+<li>align-items 元素在主轴（页面）<strong>当前行</strong>的侧轴（纵轴）方向上的对齐方式，即在当前行上是（靠上对齐）（靠下对齐）（居中对齐）等</li>
+</ol>
+<pre class="line-numbers language-css"><code class="language-css"><span class="token property">align-items</span><span class="token punctuation">:</span> stretch|center|flex-start|flex-end|baseline|initial|inherit<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<blockquote>
+<p>其中stretch是默认值，拉伸填满整行。</p>
+</blockquote>
+<ol start="4">
+<li>align-content 在弹性容器内的元素没有占用交叉轴上所有可用的空间时对齐容器内的各项（垂直），就是弹性布局垂直方向上的排列方式</li>
+</ol>
+<pre class="line-numbers language-css"><code class="language-css"><span class="token property">align-content</span><span class="token punctuation">:</span> stretch|center|flex-start|flex-end|space-between|space-around|initial|inherit<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<blockquote>
+<p>注意：Internet Explorer, Firefox, 和 Safari 浏览器不支持 align-content 属性。</p>
+</blockquote>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -697,7 +688,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://www.1542051400.club/home/hexo/posts/a1bded03.html/">https://www.1542051400.club/home/hexo/posts/a1bded03.html/</a>
+                    <a href="https://www.1542051400.club/home/hexo/posts/657b68b.html/">https://www.1542051400.club/home/hexo/posts/657b68b.html/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -735,12 +726,8 @@
           
           <div class="article-tag">
             
-            <a href="/tags/%E9%9A%8F%E7%AC%94/">
-              <span class="chip bg-color">随笔</span>
-            </a>
-            
-            <a href="/tags/agent/">
-              <span class="chip bg-color">agent</span>
+            <a href="/tags/CSS/">
+              <span class="chip bg-color">CSS</span>
             </a>
             
           </div>
@@ -917,7 +904,7 @@
         repo: 'SingleMY.github.io',
         owner: 'SingleMY',
         admin: ["SingleMY"],
-        id: '2020-05-09T17-25-24',
+        id: '2020-05-26T02-26-57',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
     gitalk.render('gitalk-container');
@@ -1189,80 +1176,31 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/88534fa4.html/">
+                <a href="/posts/657b68b.html/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="SpringMVC02">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="CSS1">
                         
-                        <span class="card-title">SpringMVC02</span>
+                        <span class="card-title">CSS1</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            分析 Spring webmvc 的启动流程
-Spring MVC 是 Spring 家族中比较有特点的一员，它分离了控制器、模型对象和视图层。Spring 的 MVC 框架是围绕 DispatcherServlet 设计的，主要由 Dis
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-12
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
-                                    后端
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Spring/">
-                        <span class="chip bg-color">Spring</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/posts/312e9705.html/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="一年后再拿起VScode(1)">
-                        
-                        <span class="card-title">一年后再拿起VScode(1)</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            VScode的代码美化–vue项目插件：eslint+vetur+prettier
-
-序言一年前跟学长尝试了一个vue项目，第一次接触编辑器，以前学的C语言和Java原来编译他们那个叫IDE，是集成了编辑器和编译器的，用过ＶS studio
+                            序言HTML和CSS别混为一谈。
+预备知识梳理
+HTML的元素大体上被分为两类：块级元素和内联元素。块级元素在浏览器显示时，通常会以新行来开始（和结束），块元素是一个元素，占用了全部宽度，在前后都是换行符,比如最常见的&lt;div&gt;
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-08
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-26
                             </span>
                         <span class="publish-author">
                             
@@ -1276,11 +1214,67 @@ Spring MVC 是 Spring 家族中比较有特点的一员，它分离了控制器�
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/vscode/">
-                        <span class="chip bg-color">vscode</span>
+                    <a href="/tags/CSS/">
+                        <span class="chip bg-color">CSS</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/eb099757.html/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="常用的给C盘减压小技巧(1)">
+                        
+                        <span class="card-title">常用的给C盘减压小技巧(1)</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            序言 电脑的使用是必备的技能，C盘也就是系统盘总是用着用着就满了，原因归结于四个字：系统默认。和它对应的是：用户自定义。接下来分享几个常用的自定义设置。
+QQ微信的文件存储路径自定义
+Tim
+
+
+找到软件的主菜单，点击打开设置选项。
+点击文
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-21
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Diary/" class="post-category">
+                                    Diary
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E9%9A%8F%E7%AC%94/">
+                        <span class="chip bg-color">随笔</span>
                     </a>
                     
                 </div>

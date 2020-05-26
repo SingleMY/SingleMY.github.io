@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>CSS1</title>
+      <link href="/posts/657b68b.html/"/>
+      <url>/posts/657b68b.html/</url>
+      
+        <content type="html"><![CDATA[<h2 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h2><p>HTML和CSS别混为一谈。</p><h2 id="预备知识梳理"><a href="#预备知识梳理" class="headerlink" title="预备知识梳理"></a>预备知识梳理</h2><ol><li>HTML的元素大体上被分为两类：块级元素和内联元素。块级元素在浏览器显示时，通常会以新行来开始（和结束），块元素是一个元素，占用了全部宽度，在前后都是换行符,比如最常见的<code>&lt;div&gt;</code>和<code>&lt;h1&gt;, &lt;p&gt;, &lt;ul&gt;, &lt;table&gt;</code>;内联元素最常见的是<code>&lt;span&gt;</code>除此之外还有<code>&lt;b&gt;, &lt;td&gt;, &lt;a&gt;, &lt;img&gt;</code>,内联元素在显示时通常不会以新行开始,内联元素只需要必要的宽度，不强制换行。</li><li>CSS样式的优先级：<br>内联样式）Inline style &gt; （内部样式）Internal style sheet &gt;（外部样式）External style sheet &gt; 浏览器默认样式</li></ol><ul><li>通用选择器（*）</li><li>元素(类型)选择器</li><li>类选择器</li><li>属性选择器</li><li>伪类</li><li>ID 选择器</li><li>内联样式</li><li>!important 规则例外</li></ul><h2 id="Display属性"><a href="#Display属性" class="headerlink" title="Display属性"></a>Display属性</h2><h3 id="把块级元素转变成内联元素"><a href="#把块级元素转变成内联元素" class="headerlink" title="把块级元素转变成内联元素"></a>把块级元素转变成内联元素</h3><pre class="line-numbers language-css"><code class="language-css"><span class="token property">display</span><span class="token punctuation">:</span>inline<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="把内联元素转变成块级元素"><a href="#把内联元素转变成块级元素" class="headerlink" title="把内联元素转变成块级元素"></a>把内联元素转变成块级元素</h3><pre class="line-numbers language-css"><code class="language-css"><span class="token property">display</span><span class="token punctuation">:</span>block<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><ul><li><p><code>display:inline-block</code>– 显示为内联块元素，表现为同行显示并可修改宽高内外边距等属性,我们常将<code>&lt;ul&gt;</code>元素加上display:inline-block样式，原本垂直的列表就可以水平显示了。</p></li><li><p><code>display:none</code></p></li></ul><blockquote><p>visibility: hidden 相当于 display:none，能把元素隐藏起来，但两者的区别在于：</p></blockquote><ol><li>display:none 元素不再占用空间。</li><li>visibility: hidden 使元素在网页上不可见，但仍占用空间。</li></ol><h3 id="弹性布局"><a href="#弹性布局" class="headerlink" title="弹性布局"></a>弹性布局</h3><pre class="line-numbers language-css"><code class="language-css"><span class="token property">display</span><span class="token punctuation">:</span>flex<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>设为Flex布局以后，子元素的<strong>float</strong>、clear和<strong>vertical-align</strong>属性将失效。</p><ol><li>flex-direction <strong>容器内</strong>元素的排列方向(默认横向排列)</li></ol><ul><li><code>flex-direction:row;</code> 沿水平主轴让元素从左向右排列</li><li><code>flex-direction:column;</code> 让元素沿垂直主轴从上到下垂直排列</li></ul><ol start="2"><li>justify-content 元素在主轴（页面）上的排列</li></ol><ul><li><code>justify-content:center;</code>元素在主轴（页面）上居中排列</li><li><code>justify-content:flex-start;</code>元素在主轴（页面）上由左或者上开始排列</li><li><code>justify-content:flex-end;</code>元素在主轴（页面）上由右或者下开始排列</li><li><code>justify-content:space-between;</code>元素在主轴（页面）上左右两端或者上下两端开始排列</li><li><code>justify-content:space-around;</code>每个元素两侧的间隔相等。所以，元素之间的间隔比元素与边框的间隔大一倍。</li></ul><ol start="3"><li>align-items 元素在主轴（页面）<strong>当前行</strong>的侧轴（纵轴）方向上的对齐方式，即在当前行上是（靠上对齐）（靠下对齐）（居中对齐）等</li></ol><pre class="line-numbers language-css"><code class="language-css"><span class="token property">align-items</span><span class="token punctuation">:</span> stretch|center|flex-start|flex-end|baseline|initial|inherit<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><blockquote><p>其中stretch是默认值，拉伸填满整行。</p></blockquote><ol start="4"><li>align-content 在弹性容器内的元素没有占用交叉轴上所有可用的空间时对齐容器内的各项（垂直），就是弹性布局垂直方向上的排列方式</li></ol><pre class="line-numbers language-css"><code class="language-css"><span class="token property">align-content</span><span class="token punctuation">:</span> stretch|center|flex-start|flex-end|space-between|space-around|initial|inherit<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><blockquote><p>注意：Internet Explorer, Firefox, 和 Safari 浏览器不支持 align-content 属性。</p></blockquote><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CSS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>常用的给C盘减压小技巧(1)</title>
       <link href="/posts/eb099757.html/"/>
       <url>/posts/eb099757.html/</url>
