@@ -679,12 +679,12 @@ mv log1.txt log2.txt log3.txt /test3 #将文件 log1.txt,log2.txt,log3.txt 移�
 <pre class="line-numbers language-shell"><code class="language-shell">man ls<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="sed"><a href="#sed" class="headerlink" title="sed"></a>sed</h3><p>Linux sed 命令是利用脚本来处理文本文件。</p>
 <p>命令语法：</p>
-<pre class="line-numbers language-shell"><code class="language-shell">sed [-hnV][-e<script>][-f<script文件>][文本文件]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell"><code class="language-shell">sed [-hnV][-e<脚本>][-f<脚本文件>][文本文件]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>参数说明：</p>
-<pre class="line-numbers language-shell"><code class="language-shell">-e<script>或--expression=<script> 以选项中指定的script来处理输入的文本文件。
--f<script文件>或--file=<script文件> 以选项中指定的script文件来处理输入的文本文件。
+<pre class="line-numbers language-shell"><code class="language-shell">-e<脚本>或--expression=<脚本> 以选项中指定的脚本来处理输入的文本文件。
+-f<脚本文件>或--file=<脚本文件> 以选项中指定的脚本文件来处理输入的文本文件。
 -h或--help 显示帮助。
--n或--quiet或--silent 仅显示script处理后的结果。
+-n或--quiet或--silent 仅显示脚本处理后的结果。
 -V或--version 显示版本信息。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>动作说明：</p>
 <pre class="line-numbers language-shell"><code class="language-shell">a ：新增， a 的后面可以接字串，而这些字串会在新的一行出现(目前的下一行)～
@@ -1937,6 +1937,5 @@ $(function () {
             }, 3e3)))
       })
     </script>
-   
   <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"left","width":200,"height":400},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
 </html>
