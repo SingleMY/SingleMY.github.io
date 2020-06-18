@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="SpringMVC02, 软件工程领域技术学习记录与分享">
+    <meta name="keywords" content="作业管理系统, 软件工程领域技术学习记录与分享">
     <meta name="description" content="墨阳的的个人博客,主要研究软件开发过程和前后端开发">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>SpringMVC02 | 墨阳</title>
+    <title>作业管理系统 | 墨阳</title>
     <link rel="icon" type="image/png" href="/medias/logo.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -415,12 +415,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">SpringMVC02</h1>
+                    <h1 class="description center-align post-title">作业管理系统</h1>
                 </div>
             </div>
         </div>
@@ -537,8 +537,8 @@
           
           <div class="article-tag">
             
-            <a href="/tags/Spring/">
-              <span class="chip bg-color">Spring</span>
+            <a href="/tags/Spring-boot-Vue/">
+              <span class="chip bg-color">Spring boot Vue</span>
             </a>
             
           </div>
@@ -561,16 +561,16 @@
       <div class="post-info">
         
         <div class="post-date info-break-policy">
-          <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp; 2020-05-12
+          <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp; 2020-06-18
         </div>
           
         <div class="info-break-policy">
-          <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp; 2.3k
+          <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp; 410
         </div>
          
         <div class="info-break-policy">
           <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-          10 分
+          1 分
         </div>
          
         <span id="busuanzi_container_page_pv" class="info-break-policy"></span>
@@ -582,248 +582,20 @@
     <hr class="clearfix" />
     <div class="card-content article-card-content">
       <div id="articleContent">
-        <h1 id="分析-Spring-webmvc-的启动流程"><a href="#分析-Spring-webmvc-的启动流程" class="headerlink" title="分析 Spring webmvc 的启动流程"></a>分析 Spring webmvc 的启动流程</h1><blockquote>
-<p>Spring MVC 是 Spring 家族中比较有特点的一员，它分离了控制器、模型对象和视图层。Spring 的 MVC 框架是围绕 DispatcherServlet 设计的，主要由 DispatcherServlet、处理器映射、控制器、视图解析器、视图组成，Spring webmvc 启动以 web.xml 为入口，进行 web 初始化，再进行 Spring MVC 初始化。</p>
+        <p>大三下JavaEE专业选修课的作业，再一次拿起熟悉的Vue，通过这次训练又提升了很多，该项目主要使用Spring Boot和 Vue框架完成，类似一个后台管理系统。<br>选用 Vue.js + Spring Boot 来开发这个项目，是因为这两种框架当下比较热门，也是实现所谓 前后端分离 的最佳选择之一。目前坚定向Java Web工程师迈进，所以这学期的课很有帮助，好了废话不多说，进入实际。</p>
+<h2 id="项目概述"><a href="#项目概述" class="headerlink" title="项目概述"></a>项目概述</h2><p>这个作业管理系统实现的功能有：</p>
+<ul>
+<li><p><strong>用户登录注册</strong>，我做了一些以前没做的细节优化，比如表单验证，数据库用户表与个人信息表的设计</p>
+</li>
+<li><p><strong>老师对每个基本表的增删改查操作</strong>，当然不是千篇一律的写法，前端上优化了交互。包括添加课程，添加学生，添加选课关系，发布作业，查看作业提交。</p>
+</li>
+<li><p><strong>学生可以查看自己学的课程的作业，并提交</strong>， 这里做的捡漏了，交互上也不合心意，主要是时间不够了，单单选课系统就有比较复杂的逻辑要处理。</p>
+</li>
+</ul>
+<blockquote>
+<p>功能有点简陋，想实现的用户信息管理没有实现，还在部署时出了神奇的麻烦，一会在下面说一下。</p>
 </blockquote>
-<a id="more"></a>
-
-<h2 id="一、-web-初始化"><a href="#一、-web-初始化" class="headerlink" title="一、 web 初始化"></a>一、 web 初始化</h2><h3 id="1-1-从-xml-文件分析"><a href="#1-1-从-xml-文件分析" class="headerlink" title="1.1 从 xml 文件分析"></a>1.1 从 xml 文件分析</h3><pre class="line-numbers language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8"?></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>web-app</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://xmlns.jcp.org/xml/ns/javaee<span class="token punctuation">"</span></span>
-         <span class="token attr-name"><span class="token namespace">xmlns:</span>xsi</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://www.w3.org/2001/XMLSchema-instance<span class="token punctuation">"</span></span>
-         <span class="token attr-name"><span class="token namespace">xsi:</span>schemaLocation</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd<span class="token punctuation">"</span></span>
-         <span class="token attr-name">version</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>4.0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-    <span class="token comment" spellcheck="true">&lt;!--1.注册监听器--></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>listener</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>listener-class</span><span class="token punctuation">></span></span>org.springframework.web.context.ContextLoaderListener<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>listener-class</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>listener</span><span class="token punctuation">></span></span>
-    <span class="token comment" spellcheck="true">&lt;!--第一次初始化的内容--></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>context-param</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>param-name</span><span class="token punctuation">></span></span>contextConfigLocation<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>param-name</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>param-value</span><span class="token punctuation">></span></span>/WEB-INF/applicationContext.xml<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>param-value</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>context-param</span><span class="token punctuation">></span></span>
-    <span class="token comment" spellcheck="true">&lt;!--2.过滤器，非必须，但过滤器监听器正常初始化--></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>filter</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>filter-name</span><span class="token punctuation">></span></span>CharacterEncodingFilter<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>filter-name</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>filter-class</span><span class="token punctuation">></span></span>
-      org.springframework.web.filter.CharacterEncodingFilter
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>filter-class</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>init-param</span><span class="token punctuation">></span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>param-name</span><span class="token punctuation">></span></span>encoding<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>param-name</span><span class="token punctuation">></span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>param-value</span><span class="token punctuation">></span></span>utf-8<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>param-value</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>init-param</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>filter</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>filter-mapping</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>filter-name</span><span class="token punctuation">></span></span>CharacterEncodingFilter<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>filter-name</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url-pattern</span><span class="token punctuation">></span></span>/*<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>url-pattern</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>filter-mapping</span><span class="token punctuation">></span></span>
-  <span class="token comment" spellcheck="true">&lt;!--3. 初始化（注册）Servlet--></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>servlet</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>servlet-name</span><span class="token punctuation">></span></span>dispatcher<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>servlet-name</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>servlet-class</span><span class="token punctuation">></span></span>org.springframework.web.servlet.DispatcherServlet<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>servlet-class</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>load-on-startup</span><span class="token punctuation">></span></span>1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>load-on-startup</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>servlet</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>servlet-mapping</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>servlet-name</span><span class="token punctuation">></span></span>dispatcher<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>servlet-name</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url-pattern</span><span class="token punctuation">></span></span>*.form<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>url-pattern</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>servlet-mapping</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>web-app</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ol>
-<li>Instantiate an instance of each event listener identified by a <listener> element in the deployment descriptor.</listener></li>
-<li>For instantiated listener instances that <em>implement</em> ServletContextListener, call the contextInitialized() method.</li>
-<li>Instantiate an instance of each filter identified by a <filter> element in the deployment descriptor and call each filter instance’s init() method.</filter></li>
-<li>Instantiate an instance of each servlet identified by a <servlet> element that includes a <load-on-startup> element in the order defined by the load-on-startup element values, and call each servlet instance’s init() method.</load-on-startup></servlet></li>
-</ol>
-<ul>
-<li>上面是官网给出的 web 的<strong>初始化</strong>过程，首先注册<strong>根监听器</strong>，接着完成第一次初始化,即注册 applicationContext，并启动 Servlet<strong>监听器</strong>；然后初始化（注册）<strong>过滤器</strong>；再初始化（注册）<strong>Servlet</strong>。其中比较重要的是 ApplicationContext 注册和 Servlet 注册。</li>
-<li>ContextLoaderListener 类起着至关重要的作用。它读取 web.xml 中配置的 context-param 中的配置文件，提前在 web 容器初始化前准备业务对应的 Application context;<strong>将创建好的 Application context 放置于 ServletContext 中</strong>，为<strong>springMVC</strong>部分的初始化做好准备。</li>
-<li>所以三个 xml 的加载顺序是 web.xml 创建 WebApplicationContext；<br>ApplicationContext.xml 加载 bean；至此 web 就已经加载完了，然后是 DispatchServlet.xml，它会把前两个加载的东西拿来做参数，来初始化 DispatchServlet 管控 Spring MVC 部分。</li>
-</ul>
-<h3 id="1-2-从类的关系理解"><a href="#1-2-从类的关系理解" class="headerlink" title="1.2 从类的关系理解"></a>1.2 从类的关系理解</h3><ul>
-<li>最初始的类是 ContextLoader，实现了下面两个个方法：</li>
-</ul>
-<pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">////创建父容器context，默认是XmlWebApplicationContext</span>
-<span class="token keyword">public</span> WebApplicationContext <span class="token function">initWebApplicationContext</span><span class="token punctuation">(</span>ServletContext servletContext<span class="token punctuation">)</span>
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-<span class="token keyword">protected</span> WebApplicationContext <span class="token function">createWebApplicationContext</span><span class="token punctuation">(</span>ServletContext sc<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>ContextLoaderListener 类,继承了 ContextLoader。实现了 ServletContextListener。</li>
-</ul>
-<h3 id="2-IoC-容器创建"><a href="#2-IoC-容器创建" class="headerlink" title="2. IoC 容器创建"></a>2. IoC 容器创建</h3><p>ApplicationContext 注册就是 IOC 容器的创建，实例化整个上下文中的 bean，所以 ApplicationContext.xml 是这样的：</p>
-<pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>beans</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://www.springframework.org/schema/beans<span class="token punctuation">"</span></span>
-       <span class="token attr-name"><span class="token namespace">xmlns:</span>xsi</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://www.w3.org/2001/XMLSchema-instance<span class="token punctuation">"</span></span>
-       <span class="token attr-name"><span class="token namespace">xsi:</span>schemaLocation</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>beans</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>关于控制反转的概念，已经在上一篇博文中详细讲述，这里不再赘述，介绍几种创建 IoC 容器的方法：</p>
-<pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**通过xml文件注册的bean的IoC创建*/</span>
-<span class="token comment" spellcheck="true">//classpath</span>
-ApplicationContext context <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ClassPathXmlApplicationContext</span><span class="token punctuation">(</span><span class="token string">"applicationContext.xml"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">//文件路径</span>
-ApplicationContext getApplicationContext <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileSystemXmlApplicationContext</span><span class="token punctuation">(</span><span class="token string">"配置文件的绝对路径"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">/**通过注解注册的bean的IoC容器创建*/</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="3-Bean-初始化"><a href="#3-Bean-初始化" class="headerlink" title="3. Bean 初始化"></a>3. Bean 初始化</h3><h4 id="3-1-bean-的概念"><a href="#3-1-bean-的概念" class="headerlink" title="3.1 bean 的概念"></a>3.1 bean 的概念</h4><blockquote>
-<p>在 Spring 中，由 Spring IoC 容器管理的对象叫做 beans。 bean 就是由 Spring IoC 容器实例化、组装和以其他方式管理的对象。此外 bean 只是你应用中许多对象中的一个。Spring 框架中，一旦把一个 Bean 纳入到 Spring IoC 容器之中，这个 Bean 的生命周期就会交由容器进行管理。</p>
-</blockquote>
-<h4 id="3-2-bean-的属性"><a href="#3-2-bean-的属性" class="headerlink" title="3.2 bean 的属性"></a>3.2 bean 的属性</h4><table>
-<thead>
-<tr>
-<th align="left">属性</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">class</td>
-<td align="left">这个属性是强制性的，并且指定用来创建 bean 的 bean 类。</td>
-</tr>
-<tr>
-<td align="left">name</td>
-<td align="left">这个属性指定唯一的 bean 标识符。在基于 XML 的配置元数据中，至少定义一个 ID 或 name 属性来指定 bean 标识符。</td>
-</tr>
-<tr>
-<td align="left">scope</td>
-<td align="left">这个属性指定由特定的 bean 定义创建的对象的作用域</td>
-</tr>
-<tr>
-<td align="left">constructor-arg</td>
-<td align="left">它是用来注入依赖关系的</td>
-</tr>
-<tr>
-<td align="left">properties</td>
-<td align="left">它是用来注入依赖关系的</td>
-</tr>
-<tr>
-<td align="left">autowiring mode</td>
-<td align="left">它是用来注入依赖关系的</td>
-</tr>
-<tr>
-<td align="left">lazy-initialization mode</td>
-<td align="left">延迟初始化的 bean 告诉 IoC 容器在它第一次被请求时，而不是在启动时去创建一个 bean 实例。</td>
-</tr>
-<tr>
-<td align="left">initialization 方法</td>
-<td align="left">在 bean 的所有必需的属性被容器设置之后，调用回调方法。</td>
-</tr>
-<tr>
-<td align="left">destruction 方法</td>
-<td align="left">当包含该 bean 的容器被销毁时，使用回调方法。</td>
-</tr>
-</tbody></table>
-<h4 id="3-3-bean-作用域"><a href="#3-3-bean-作用域" class="headerlink" title="3.3 bean 作用域"></a>3.3 bean 作用域</h4><ul>
-<li>singleton 作用域：默认的作用域。如果你想让 Spring 在每次需要时都返回同一个 bean 实例，你应该声明 bean 的作用域的属性为 singleton。</li>
-<li>prototype 作用域：为了强制 Spring 在每次需要时都产生一个新的 bean 实例，你应该声明 bean 的作用域的属性为 prototype。</li>
-</ul>
-<h4 id="3-4-生命周期"><a href="#3-4-生命周期" class="headerlink" title="3.4 生命周期"></a>3.4 生命周期</h4><ul>
-<li>实例化：实例化一个 Bean（由 BeanFactory 读取 Bean 定义文件，并生成各个实例）－－也就是我们常说的 new（@Bean）；</li>
-<li>设置属性：按照 Spring 上下文对实例化的 Bean 的属性值进行设置。</li>
-<li>使用初始化：调用 bean 的初始化方法。(将 bean 实例传递给 bean 后置处理器的 postProcessBeforeInitialization()方法)</li>
-<li>bean 可以使用了……</li>
-<li>当容器关闭时，调用 bean 的销毁方法<blockquote>
-<p>在配置 bean 时，通过 init-method 和 destroy-method 属性为 bean 指定初始化和销毁方法.</p>
-</blockquote>
-</li>
-</ul>
-<h4 id="bean-注入的方式"><a href="#bean-注入的方式" class="headerlink" title="bean 注入的方式"></a>bean 注入的方式</h4><ol>
-<li>通过 xml 注入：</li>
-</ol>
-<ul>
-<li>定义 bean</li>
-</ul>
-<pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Data</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Student</span> <span class="token punctuation">{</span>
-    <span class="token keyword">private</span> String sno<span class="token punctuation">;</span>
-    <span class="token keyword">private</span> String sname<span class="token punctuation">;</span>
-    <span class="token keyword">private</span> String password<span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>在 ApplicationContext.xml 中注册</li>
-</ul>
-<pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>student<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Bean.Student<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<ol start="2">
-<li>通过注解注入：</li>
-</ol>
-<ul>
-<li>首先在 spring 配置文件中开启注解扫描：</li>
-</ul>
-<pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">context:</span>component-scan</span> <span class="token attr-name">base-package</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>org.example.spring.mvc<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<ul>
-<li>使用注解声明 bean:</li>
-</ul>
-<pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Component</span><span class="token punctuation">(</span><span class="token string">"jdbc"</span><span class="token punctuation">)</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">StudentHomeWorkJdbc</span> <span class="token punctuation">{</span>
-    <span class="token comment" spellcheck="true">//</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<ol start="3">
-<li>基于 java 类的配置</li>
-</ol>
-<ul>
-<li>使用@Configuration 注解需要作为配置的类，表示该类将定义 Bean 的元数据</li>
-<li>使用@Bean 注解相应的方法，该方法名默认就是 Bean 的名称，该方法返回值就是 Bean 的对象。</li>
-<li>AnnotationConfigApplicationContext 或子类进行加载基于 java 类的配置</li>
-</ul>
-<pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Configuration</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">AppConfig</span> <span class="token punctuation">{</span>
-    <span class="token annotation punctuation">@Bean</span>
-    <span class="token keyword">public</span> MyService <span class="token function">myService</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">MyServiceImpl</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="二、-Spring-MVC-启动流程"><a href="#二、-Spring-MVC-启动流程" class="headerlink" title="二、 Spring MVC 启动流程"></a>二、 Spring MVC 启动流程</h2><h3 id="2-1-分析-DispatcherServlet-xml"><a href="#2-1-分析-DispatcherServlet-xml" class="headerlink" title="2.1 分析 DispatcherServlet.xml"></a>2.1 分析 DispatcherServlet.xml</h3><pre class="line-numbers language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8"?></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>beans</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://www.springframework.org/schema/beans<span class="token punctuation">"</span></span>
-       <span class="token attr-name"><span class="token namespace">xmlns:</span>xsi</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://www.w3.org/2001/XMLSchema-instance<span class="token punctuation">"</span></span>
-       <span class="token attr-name"><span class="token namespace">xmlns:</span>context</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://www.springframework.org/schema/context<span class="token punctuation">"</span></span>
-       <span class="token attr-name"><span class="token namespace">xmlns:</span>mvc</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://www.springframework.org/schema/mvc<span class="token punctuation">"</span></span>
-       <span class="token attr-name"><span class="token namespace">xsi:</span>schemaLocation</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-    <span class="token comment" spellcheck="true">&lt;!--此文件负责整个mvc中的配置--></span>
-
-    <span class="token comment" spellcheck="true">&lt;!--启用spring的一些annotation --></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">context:</span>annotation-config</span><span class="token punctuation">/></span></span>
-
-    <span class="token comment" spellcheck="true">&lt;!-- 配置注解驱动 可以将request参数与绑定到controller参数上 --></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">mvc:</span>annotation-driven</span><span class="token punctuation">/></span></span>
-
-    <span class="token comment" spellcheck="true">&lt;!--静态资源映射--></span>
-    <span class="token comment" spellcheck="true">&lt;!--本项目把静态资源放在了webapp目录下，资源映射如下--></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">mvc:</span>resources</span> <span class="token attr-name">mapping</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/assets/css/**<span class="token punctuation">"</span></span> <span class="token attr-name">location</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>assets/css/<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">mvc:</span>resources</span> <span class="token attr-name">mapping</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/assets/fonts/**<span class="token punctuation">"</span></span> <span class="token attr-name">location</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>assets/fonts/<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">mvc:</span>resources</span> <span class="token attr-name">mapping</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/assets/img/**<span class="token punctuation">"</span></span> <span class="token attr-name">location</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>assets/img/<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">mvc:</span>resources</span> <span class="token attr-name">mapping</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/assets/js/**<span class="token punctuation">"</span></span> <span class="token attr-name">location</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>assets/js/<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
-
-    <span class="token comment" spellcheck="true">&lt;!-- 对模型视图名称的解析，即在模型视图名称添加前后缀(如果最后一个还是表示文件夹,则最后的斜杠不要漏了) 使用JSP--></span>
-    <span class="token comment" spellcheck="true">&lt;!-- 默认的视图解析器 在上边的解析错误时使用 (默认使用html)- --></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>defaultViewResolver<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>org.springframework.web.servlet.view.InternalResourceViewResolver<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>prefix<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span><span class="token comment" spellcheck="true">&lt;!--设置JSP文件的目录位置--></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>suffix<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>.jsp<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>exposeContextBeansAsAttributes<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">></span></span>
-
-    <span class="token comment" spellcheck="true">&lt;!--自动扫描装配 （base-package由包名决定--></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">context:</span>component-scan</span> <span class="token attr-name">base-package</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Controller<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>beans</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="2-2-图解"><a href="#2-2-图解" class="headerlink" title="2.2 图解"></a>2.2 图解</h3>
-
-<ol>
-<li>客户端请求提交到 DispatcherServlet。</li>
-<li>由 DispatcherServlet 控制器寻找一个或多个 HandlerMapping，找到处理请求的 Controller。</li>
-<li>DispatcherServlet 将请求提交到 Controller。</li>
-<li>Controller 调用业务逻辑处理后返回 ModelAndView。</li>
-<li>DispatcherServlet 寻找一个或多个 ViewResolver 视图解析器，找到 ModelAndView 指定的视图。</li>
-<li>视图负责将结果显示到客户端。<blockquote>
-<p>共包含 4 个 Spring MVC 接口，即 DispatcherServlet、HandlerMapping、Controller 和 ViewResolver。</p>
-</blockquote>
-</li>
-</ol>
-<ul>
-<li><p>Spring MVC 所有的请求都经过 DispatcherServlet 来统一分发，在 DispatcherServlet 将请求分发给 Controller 之前需要借助 Spring MVC 提供的 HandlerMapping 定位到具体的 Controller。</p>
-</li>
-<li><p>HandlerMapping 接口负责完成客户请求到 Controller 映射。</p>
-</li>
-<li><p>Controller 接口将处理用户请求，这和 Java Servlet 扮演的角色是一致的。一旦 Controller 处理完用户请求，将返回 ModelAndView 对象给 DispatcherServlet 前端控制器，ModelAndView 中包含了模型（Model）和视图（View）。</p>
-</li>
-<li><p>从宏观角度考虑，DispatcherServlet 是整个 Web 应用的控制器；从微观考虑，Controller 是单个 Http 请求处理过程中的控制器，而 ModelAndView 是 Http 请求过程中返回的模型（Model）和视图（View）。</p>
-</li>
-<li><p>ViewResolver 接口（视图解析器）在 Web 应用中负责查找 View 对象，从而将相应结果渲染给客户。</p>
-</li>
-</ul>
+<h2 id="技术栈"><a href="#技术栈" class="headerlink" title="技术栈"></a>技术栈</h2><p><img src="http://qiniu.1542051400.club/%E6%8A%80%E6%9C%AF%E6%A0%88.png" alt="技术栈"></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -867,7 +639,7 @@ ApplicationContext getApplicationContext <span class="token operator">=</span> <
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://www.1542051400.club/posts/88534fa4.html/">https://www.1542051400.club/posts/88534fa4.html/</a>
+                    <a href="https://www.1542051400.club/posts/4d447ce.html/">https://www.1542051400.club/posts/4d447ce.html/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -905,8 +677,8 @@ ApplicationContext getApplicationContext <span class="token operator">=</span> <
           
           <div class="article-tag">
             
-            <a href="/tags/Spring/">
-              <span class="chip bg-color">Spring</span>
+            <a href="/tags/Spring-boot-Vue/">
+              <span class="chip bg-color">Spring boot Vue</span>
             </a>
             
           </div>
@@ -1083,7 +855,7 @@ ApplicationContext getApplicationContext <span class="token operator">=</span> <
         repo: 'SingleMY.github.io',
         owner: 'SingleMY',
         admin: ["SingleMY"],
-        id: '2020-05-12T22-36-40',
+        id: '2020-06-18T17-53-03',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
     gitalk.render('gitalk-container');
@@ -1355,57 +1127,48 @@ ApplicationContext getApplicationContext <span class="token operator">=</span> <
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/ef2e3874.html/">
+                <a href="/posts/4d447ce.html/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="projectScropeManagment">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="作业管理系统">
                         
-                        <span class="card-title">projectScropeManagment</span>
+                        <span class="card-title">作业管理系统</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            项目范围管理为达成产品范围所实施的所有活动。产品范围变化项目范围一定变化，反之不然。
-一、 收集需求（Collect Requirement）
-技术需求
-项目管理需求
-
-
-
-
-挖掘客户需求：客户提出的不一定是真的需求
-产品需求和商业需求
-
-
+                            大三下JavaEE专业选修课的作业，再一次拿起熟悉的Vue，通过这次训练又提升了很多，该项目主要使用Spring Boot和 Vue框架完成，类似一个后台管理系统。选用 Vue.js + Spring Boot 来开发这个项目，是因为这两种
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-13
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-18
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E9%A1%B9%E7%9B%AE/" class="post-category">
-                                    软件项目
+                            <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
+                                    后端
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%9A%8F%E7%AC%94/">
-                        <span class="chip bg-color">随笔</span>
+                    <a href="/tags/Spring-boot-Vue/">
+                        <span class="chip bg-color">Spring boot Vue</span>
                     </a>
                     
                 </div>
@@ -1419,40 +1182,33 @@ ApplicationContext getApplicationContext <span class="token operator">=</span> <
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/a1bded03.html/">
+                <a href="/posts/8f1bc9fd.html/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="人工智能基础">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="linux（非专业linux编程学生常用命令）">
                         
-                        <span class="card-title">人工智能基础</span>
+                        <span class="card-title">linux（非专业linux编程学生常用命令）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            人工智能基础知识总结概念及其发展历史（一）概念
-机器或软件所展现的智能
-学术研究领域的名称
-如何创建计算机和计算机软件使之具有智能行为
-
-
-
-发展历史诞生
-标志：1956 年的“达特茅斯夏季人工智能研究计划”会议。
-相关事件：图灵测试——旨
+                            这篇文章是针对网站开发服务器部署时常用的命令进行总结的，作者学过一点点Linux网络编程的基础知识。
+最常用的18个命令总结
+ls cd pwd mkdir vim  chmod yum whereis cat wget tar   rm 
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-09
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-13
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Diary/" class="post-category">
-                                    Diary
+                            <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="post-category">
+                                    服务器
                                 </a>
                             
                             
@@ -1462,12 +1218,8 @@ ApplicationContext getApplicationContext <span class="token operator">=</span> <
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%9A%8F%E7%AC%94/">
-                        <span class="chip bg-color">随笔</span>
-                    </a>
-                    
-                    <a href="/tags/agent/">
-                        <span class="chip bg-color">agent</span>
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
                     </a>
                     
                 </div>
