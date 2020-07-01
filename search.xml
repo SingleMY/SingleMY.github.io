@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>实训总结1</title>
+      <link href="/posts/fb95e49.html/"/>
+      <url>/posts/fb95e49.html/</url>
+      
+        <content type="html"><![CDATA[<h2 id="知识积累"><a href="#知识积累" class="headerlink" title="知识积累"></a>知识积累</h2><h3 id="云服务器"><a href="#云服务器" class="headerlink" title="云服务器"></a>云服务器</h3><ol><li>关于服务器的使用，新学会了通过内网ip连接和ssh免密连接如何配置</li></ol><pre class="line-numbers language-linux"><code class="language-linux">ssh root@内网ip地址<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h4 id="ssh免密连接"><a href="#ssh免密连接" class="headerlink" title="ssh免密连接"></a>ssh免密连接</h4><p>在每台服务器上，配置hosts文件，允许和其他服务器内网ip互通，再配置ssh连接的公钥，分别拷贝到其他服务器上，这样就可以通过如下指令进行免密连接了：</p><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">ssh</span> root@主机名<span class="token punctuation">(</span>hostname<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="MariaDB-数据库的管理系统"><a href="#MariaDB-数据库的管理系统" class="headerlink" title="MariaDB 数据库的管理系统"></a>MariaDB 数据库的管理系统</h3><p>初次接触MariaDB数据库管理系统，一直觉得自己的数据库只知道那几个主流的数据库不够用，这次接触MariaDB，就了解了下，以后项目开发争取用两次。</p><h2 id="错误记录"><a href="#错误记录" class="headerlink" title="错误记录"></a>错误记录</h2><h3 id="错误一-多终端连接同一服务器下载文件，文件损坏"><a href="#错误一-多终端连接同一服务器下载文件，文件损坏" class="headerlink" title="错误一 多终端连接同一服务器下载文件，文件损坏"></a>错误一 多终端连接同一服务器下载文件，文件损坏</h3><p>编译hadoop和sqoop时，虽然使用了不用的用户进行进行连接下载，按理讲不应该出现损坏问题，可能是由于权限问题或者是在同一台电脑上登录的问题。最后通过root用户一一下载完成。</p><h3 id="错误二"><a href="#错误二" class="headerlink" title="错误二"></a>错误二</h3><p>一次失误，在进行集群架构时，忽略了修改/etc/cloud/cloud.cfg要在每个node上都执行。导致重启后文件被系统修改，node显示错误，经查看日志文件解决。</p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>前六个实验做完了，只遇到了两个错误，均是由于没有按照手册完成导致的，在这期间帮助同学解决了一些错误，发现必须要把每一步都验证完成了，再往下做；还有一点就是学会用日志分析错误。</p><p>比如：jps命令验证slave1节点的datanode没有启动，原因在于前面未完成免密连接。</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 基于大数据分析的web电商系统开发 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 暑期实训 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>作业管理系统</title>
       <link href="/posts/4d447ce.html/"/>
       <url>/posts/4d447ce.html/</url>
