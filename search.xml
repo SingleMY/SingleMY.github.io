@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>实训总结2</title>
+      <link href="/posts/96b00ff3.html/"/>
+      <url>/posts/96b00ff3.html/</url>
+      
+        <content type="html"><![CDATA[<h2 id="知识积累"><a href="#知识积累" class="headerlink" title="知识积累"></a>知识积累</h2><h3 id="Hadoop的框架"><a href="#Hadoop的框架" class="headerlink" title="Hadoop的框架"></a>Hadoop的框架</h3><blockquote><p>Hadoop的框架最核心的设计就是：HDFS和MapReduce<br>Hadoop是一个开源框架来存储和处理大型数据在分布式环境中。它包含两个模块，一个是MapReduce，另外一个是Hadoop分布式文件系统（HDFS）。</p></blockquote><ul><li>MapReduce：它是一种并行编程模型在大型集群普通硬件可用于处理大型结构化，半结构化和非结构化数据。</li><li>HDFS：Hadoop分布式文件系统是Hadoop的框架的一部分，用于存储和处理数据集。它提供了一个容错文件系统在普通硬件上运行。</li></ul><h3 id="Sqoop"><a href="#Sqoop" class="headerlink" title="Sqoop"></a>Sqoop</h3><p><strong>Sqoop是一个用来将Hadoop和关系型数据库中的数据相互转移的工具</strong>，可以将一个关系型数据库（例如 ： MySQL ,Oracle ,Postgres等）中的数据导进到Hadoop的HDFS中，也可以将HDFS的数据导进到关系型数据库中。<br><img src="http://qiniu.1542051400.club/%7BfilePath%7D/20200705002228.png" alt="sqoop作用"></p><h3 id="hive"><a href="#hive" class="headerlink" title="hive"></a>hive</h3><p><a href="https://hive.apache.org/" target="_blank" rel="noopener">Apache Hive</a>是基于Hadoop的一个数据仓库工具，<strong>可以将结构化的数据文件映射为一张数据库表</strong>，并提供一种HQL语言进行查询，具有扩展性好、延展性好、高容错等特点，多应用于离线数仓建设。</p><h3 id="mathout"><a href="#mathout" class="headerlink" title="mathout"></a>mathout</h3><p>Apache Mahout 是 Apache Software Foundation (ASF) 旗下的一个开源项目，提供一些可扩展的机器学习领域经典算法的实现，旨在帮助开发人员更加方便快捷地创建智能应用程序，Mahout包含许多实现，包括聚类、分类、推荐过滤、频繁子项挖掘。此外，通过使用 Apache Hadoop 库，Mahout 可以有效地扩展到云中。Mahout 中提供了常用的多种聚类算法：Canopy算法、k-means算法、模糊k-means算法等。</p><h3 id="运行python和java的混合项目"><a href="#运行python和java的混合项目" class="headerlink" title="运行python和java的混合项目"></a>运行python和java的混合项目</h3><p>java项目编译Artifacts 生成jar包，放到服务器上用Python脚本去执行，其中有如下指令需要执行。</p><pre class="line-numbers language-shell"><code class="language-shell">zip -d <jar包文件> 'META-INF/.SF' 'META-INF/.RSA' 'META-INF/*SF' #解决mainfest报错问题<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><ul><li>系统参数问题： python .py文件  系统参数1 系统参数2  　.py文件为系统参数0</li></ul><h2 id="错误记录"><a href="#错误记录" class="headerlink" title="错误记录"></a>错误记录</h2><h3 id="错误一-datanode未启动成功"><a href="#错误一-datanode未启动成功" class="headerlink" title="错误一 datanode未启动成功"></a>错误一 datanode未启动成功</h3><p>原因： 查看日志发现，由于clusterID不一致，报错如图所示。</p><p>解决：将slave1节点的hdfs文件系统的data与name文件夹删除，通过scp指令将master节点的hadoop文件系统重新拷贝到salve1节点，slave2与之相同。</p><p><img src="http://qiniu.1542051400.club/ource/_posts/%E5%AE%9E%E8%AE%AD%E6%80%BB%E7%BB%932/20200705005741.png" alt="datanode未正常启动"></p><h3 id="错误二-manifest签名错误"><a href="#错误二-manifest签名错误" class="headerlink" title="错误二 manifest签名错误"></a>错误二 manifest签名错误</h3><p><img src="http://qiniu.1542051400.club/ource/_posts/%E5%AE%9E%E8%AE%AD%E6%80%BB%E7%BB%932/20200705010001.png" alt="Manifest签名错误"></p><p>解决：执行上面的zip指令。</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 基于大数据分析的web电商系统开发 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 暑期实训 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>实训总结1</title>
       <link href="/posts/fb95e49.html/"/>
       <url>/posts/fb95e49.html/</url>
